@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            margin: auto 0;
+            flex-direction: column;
+            font-family: "GalmuriMono9";
+        }
+
+        #container,header, #main {
+            background-color: #000;
+            min-width: 1000px;
+            max-width: 1600px;
+            height: 100vh;
+            display: flex;
+        }
+
+        header, #main{
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+        }
+
+        #container{
+            justify-content: center; /* 수평 중앙 정렬 */
+            align-items: center; /* 수직 중앙 정렬 */
+            position: relative;
+        }
+
+        #HOME1 {
+            position: absolute;
+            height: 440px;
+            width: 440px;
+            z-index: 0;
+            display: none; /* 초기 상태 */
+            z-index: 50;
+        }
+
+        #Bar {
+            position: absolute;
+            height: 440px;
+            width: 440px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            background-color: #a5313100;
+            z-index: 200;
+            display: none;
+        }
+
+        #HOME2 {
+            position: absolute;
+            height: auto;
+            width: 440px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 100;
+        }
+
+        #title {
+            color: #fff;
+            font-size: 3em;
+            text-align: center;
+            position: absolute;
+            z-index: 100;
+            width: 100%;
+        }
+
+        
+        #time {
+            color: #fff;
+            font-size: 3.5em;
+            text-align: center;
+            position: absolute;
+            z-index: 100;
+            width: 100%;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%, -450%);
+            display: none;
+        }
+
+
+        #video-container {
+            display: none;
+            margin-top: -200px;
+            text-align: center;
+            position: absolute;
+            z-index: 0;
+        }
+
+        #icon_play:hover { 
+            transform: translate(-50%, 380%) scale(1.1); /* 호버 시 크기 확장 */
+        }
+
+        #icon_play {
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 380%);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+
+        #icon_play img {
+            width: 60px; /* 아이콘 이미지 크기 */
+            height: 60px; /* 아이콘 이미지 크기 */
+        }
+
+        #login_layer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 1000px;
+            height: 500px;
+            font-size: 1.5em;
+            line-height: 40px;
+            background-color: rgba(255, 255, 255, 0.3);
+            z-index: 1100;
+        }
+
+        #login_input {
+            width: 200px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid #ffffff00;
+            border-radius: 5px;
+            font-size: 0.8em;
+            text-align: center;
+            z-index: 1100;
+            font-family: "GalmuriMono9";
+        }
+
+        #login_input::placeholder {
+        font-family: "GalmuriMono9"; /* placeholder 글씨체 */
+    }
+
+        #login_submit {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            padding: 10px;
+            background-color: #000000b7;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.7em;
+            z-index: 1100;
+            font-family: "GalmuriMono9";    
+            
+        }
+
+        #login_submit:hover {
+            transform: scale(1.05);
+        }
+
+        
+        #login_fail{
+            position: absolute;
+            display : none;
+            width: 250px;
+            height: 100px;
+            z-index: 2000;
+            background-color: #ffffffc5;
+            justify-content: center; /* 수평 중앙 정렬 */
+            align-items: center; /* 수직 중앙 정렬 */
+        }
+
+
+        #main_home{
+            position: absolute;
+            display : none;
+            width: 100%;
+            height: 100%;
+            max-width: 160vh;
+            max-height: 100vh;
+            z-index: 2000;
+            justify-content: center; /* 수평 중앙 정렬 */
+            align-items: center; /* 수직 중앙 정렬 */
+        }
+
+        #main_bg{
+            position: absolute;
+            display: inline-block;
+            width: 1000px;
+        }
+
+
+        #main_gallery{
+            position: absolute;
+            display: inline-block;
+            top: 50%;
+            left: 50%;
+            width: 70px;
+            transform: translate(-450px, -280px);
+            z-index: 2100;
+        }
+
+        
+        #main_project{
+            position: absolute;
+            display: inline-block;
+            width: 70px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-450px, -180px);
+            z-index: 2000;
+        }
+        
+        #main_profile{
+            position: absolute;
+            display: inline-block;
+            width: 70px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-335px, -288px);
+            z-index: 2000;
+        }
+        
+        #main_lab{
+            position: absolute;
+            display: inline-block;
+            width: 70px;
+            top: 50%;
+            left: 50%;
+            z-index: 2000;
+            transform: translate(-449px, -70px);
+        }
+
+        #profile_layer{
+            position: absolute;
+            display: none;
+            width: 900px;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            z-index: 2100
+        }
+
+        #profile_12{
+            position: absolute;
+            display: none;
+            width: 100px;
+            top:50%;
+            left:50%;
+            transform: translate(-400px, -175px);
+            z-index: 2100
+        }
+        
+        #profile_13{
+            position: absolute;
+            display: none;
+            width: 100px;
+            top:50%;
+            left:50%;
+            transform: translate(-250px, -175px);
+            z-index: 2100
+        }
+
+        #profile_die{
+            position: absolute;
+            display: none;
+            width: 100px;
+            top:50%;
+            left:50%;
+            transform: translate(-100px, -175px);
+            z-index: 2100
+        }
+
+        @media (max-width: 1000px) {
+            #container {
+                transform: scale(0.5);
+            }
+        }
+    </style>
+    <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/games/gam-2/gam198.ani), url(https://cur.cursors-4u.net/games/gam-2/gam198.png), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2008/10/21/gam198.html" target="_blank" title="Kingdom Hearts Riku Keyblade 3"><img src="https://cur.cursors-4u.net/cursor.png" alt="Kingdom Hearts Riku Keyblade 3" style="position:absolute; top: 0px; right: 0px;" /></a>
+
+</head>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css">
+
+<body>
+    <div id="container">
+        <header>
+            <div id = "main">
+                <div id = "title">Hello World!</div>
+                <div id = "time">time</div>
+                <img id="HOME1" src="src/1213_3.png" alt="1213_홈">
+                <div id ="Bar"></div>
+                <img id="HOME2" src="src/1213_4.png" alt="1213_홈">
+
+                <div id="play">
+                    <img id = "icon_play" src="src/icon_play.png" alt="Play">
+                </div>
+                
+                <div id="video-container" style="display: none;">
+                    <iframe id="video-frame" 
+                            width="10" 
+                            height="10" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allow="autoplay; encrypted-media"
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div id="login_layer">
+                    <input id="login_input" type="text" placeholder="PassWord" />
+                    <button id="login_submit">login</button>
+                </div>
+                <div id = "login_fail">접근 권한이 없습니다!</div>
+                
+            </div>
+
+
+
+            <div id = "main_home">
+                <img id = "main_bg" src="src/main_bg.png" alt="main_bg">
+                
+                <div id = "main_icon">
+                    <div id = "gallery">
+                        <img id = "main_gallery" src="src/main_gallery.png">
+                    </div>
+
+                    <div id = "project">
+                        <img id = "main_project" src="src/main_project.png">
+                    </div>
+
+                    <div id = "profile">
+                        <img id = "main_profile" src="src/main_profile.png">
+                        <img id = "profile_layer" src="src/main_profile_layer.png">
+                        <img id = "profile_12" src = "src/main_profile_12_layer.png">
+                        <img id = "profile_13" src = "src/main_profile_13_layer.png">
+                        <img id = "profile_die" src = "src/main_profile_die_layer.png">
+                        
+                    </div>
+
+                    <div id = "lab">
+                        <img id = "main_lab" src="src/main_lab.png">
+                    </div>
+
+                </div>
+            </div>
+        </header>  
+
+        <body>
+        </body>
+    </div>
+
+
+    <script>
+        const title = document.getElementById("title");
+        const time = document.getElementById("time");
+        const home1 = document.getElementById("HOME1");
+        const home2 = document.getElementById("HOME2");
+        const bar = document.getElementById('Bar');
+        const iconPlay = document.getElementById('icon_play');
+
+        const titleText = title.textContent;
+        title.textContent = ""; // 초기화
+        let currentIndex = 0;
+
+        function typeEffect() {
+            if (currentIndex < titleText.length) {
+                title.textContent += titleText[currentIndex];
+                currentIndex++;
+                setTimeout(typeEffect, 100); //글자 간격
+            }
+        }
+        typeEffect();
+        
+        function titleDel() {
+            title.style.display = "none";
+        }
+        setTimeout(titleDel, 300);
+
+
+
+        //twChat
+        function twTwElements() {
+            home1.style.display = "flex";
+            bar.style.display = "flex";
+            iconPlay.style.display = "flex";
+            time.style.display = "inline-block";
+        }
+        setTimeout(twTwElements, 300);
+        
+        
+        bar.addEventListener('mouseenter', () => {
+            home2.style.opacity = '1';
+        });
+        bar.addEventListener('mouseleave', () => {
+            home2.style.opacity = '0';
+        });
+
+        document.getElementById("icon_play").addEventListener("click", function () {
+            const videoContainer = document.getElementById("video-container");
+            const videoFrame = document.getElementById("video-frame");
+
+            const videoID = "peJS16rjZVs";
+            const videoURL = `https://www.youtube.com/embed/peJS16rjZVs?autoplay=1&controls=0&start=9&loop=1&playlist=peJS16rjZVs`;
+
+            videoFrame.src = videoURL;
+
+            videoContainer.style.display = "block";
+        });
+
+
+        // 현재 한국 시간 표시 함수
+        function updateTime() {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Seoul', hour12: false }; // 한국 시간대 설정
+            const hours = now.toLocaleString('en-US', { ...options, hour: '2-digit' });
+            let minutes = now.toLocaleString('en-US', { ...options, minute: '2-digit' });
+
+            // 한 자리 분(minute) 값에 앞에 0 추가
+            if (minutes < 10) {
+                minutes = `0${minutes}`;
+            }
+
+            // #time 요소에 현재 시간 업데이트
+            document.getElementById('time').textContent = `${hours}:${minutes}`;
+        }
+
+
+        // 1초마다 시간 업데이트
+        setInterval(updateTime, 1000);
+
+        // 처음 페이지 로드 시에도 바로 시간 표시
+        updateTime();
+
+
+
+    //로그인화면시작
+        const loginLayer = document.getElementById("login_layer");
+        const loginFail = document.getElementById("login_fail");
+        // !아이콘 클릭 시 활성화 없음
+        iconPlay.addEventListener("click", function (event) {
+            event.stopPropagation(); // 이벤트 전파 방지
+        });
+        //아이콘 활성화
+        iconPlay.addEventListener("click", function (event) {
+            event.stopPropagation(); // 이벤트 전파 방지
+            loginLayer.style.display = "flex"; // 검색창 활성화
+        });
+
+        //활성화 상태일 때 !아이콘 클릭 시 닫음
+        document.addEventListener("click", function (event) {
+            if (!loginLayer.contains(event.target) && event.target !== iconPlay) {
+                loginLayer.style.display = "none"; // 검색창 닫기
+            }
+        });
+
+        //아이콘 클릭 시에는 안 닫히도록 유지
+        loginLayer.addEventListener("click", function (event) {
+            event.stopPropagation(); // 이벤트 전파 방지
+        });
+
+
+        // 로그인 레이어 내부 텍스트 입력 및 제출 처리
+        document.getElementById("login_submit").addEventListener("click", function () {
+            const inputText = document.getElementById("login_input").value;
+            if (inputText) {
+                alert(`You entered: ${inputText}`);
+                loginLayer.style.display = "none"; // 입력 후 창 닫기
+            } else {
+                alert("Please enter some text!");
+            }
+        });
+
+
+
+    //로그인 시 main flex
+        // 로그인 레이어 내부 텍스트 입력 및 제출 처리
+        window.alert = function() {};
+        document.getElementById("login_submit").addEventListener("click", function () {
+            const inputText = document.getElementById("login_input").value;
+            if (inputText === "1213") {  // 입력값이 "1213"일 경우
+                document.getElementById("main_home").style.display = "flex";  // main_home을 flex로 변경
+                loginLayer.style.display = "none";  // 로그인 레이어 닫기
+            } else {
+                loginFail.style.display = "flex";
+                function loginFailDel() {
+                    loginFail.style.display = "none";
+                }
+                setTimeout(loginFailDel, 1500);
+            }
+        });
+
+        const mainHome = document.getElementById("main_home")
+        const mainGallery = document.getElementById("main_gallery");
+        const mainProfile = document.getElementById("main_profile");
+        const profileLayer = document.getElementById("profile_layer");
+        const profileTw = document.getElementById("profile_12");
+        const profileTh = document.getElementById("profile_13");
+        const profileDie= document.getElementById("profile_die");
+        // !아이콘 클릭 시 활성화 없음
+        mainProfile.addEventListener("click", function (event) {
+            event.stopPropagation(); // 이벤트 전파 방지
+        });
+        //아이콘 활성화
+        mainProfile.addEventListener("click", function (event) {
+            event.stopPropagation(); // 이벤트 전파 방지
+            profileLayer.style.display = "flex"; // 검색창 활성화
+            profileTw.style.display = "flex"; // 검색창 활성화
+            profileTh.style.display = "flex"; // 검색창 활성화
+            profileDie.style.display = "flex"; // 검색창 활성화
+        });
+        //활성화 상태일 때 !아이콘 클릭 시 닫음
+        document.addEventListener("click", function (event) {
+            if (!profileLayer.contains(event.target) && event.target !== mainProfile) {
+                profileLayer.style.display = "none"; // 검색창 닫기
+                profileTw.style.display = "none"; // 검색창 활성화
+                profileTh.style.display = "none"; // 검색창 활성화
+                profileDie.style.display = "none"; // 검색창 활성화
+            }
+        });
+        //아이콘 클릭 시에는 안 닫히도록 유지
+        profileLayer.addEventListener("click", function (event) {
+            event.stopPropagation(); // 이벤트 전파 방지
+        });
+
+
+    </script>
+</body>
+</html>
