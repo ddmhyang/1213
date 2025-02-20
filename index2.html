@@ -14,9 +14,10 @@
 
             .container {
                 width: 430px;
-                height: 100vh;
+                height: 932px;
                 background-color: #000000;
-                transform-origin: center center; /* 중앙을 기준으로 스케일링 */
+                transform-origin: center center;
+                transition: width 0.2s, height 0.2s;
             }
 
             #index_box {
@@ -35,16 +36,14 @@
             }
 
             #index_box a {
-                position: relative;
+                position: absolute;
                 /* Layout Properties */
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: 114px;
-                height: 131px;
                 /* UI Properties */
                 text-align: center;
-                font: normal normal bold 8px/20px Source Han Serif SC;
+                font: normal normal bold 8px/20px 'Source Han Serif SC', serif;
                 letter-spacing: 0px;
                 color: #000000;
                 opacity: 1;
@@ -87,11 +86,12 @@
     <body>
         <div class="container">
             <div id="index_box">
-                <a>猫兄弟物語<br>
-                    猫の兄弟が住んでいた<br>
-                    二人は兄弟だったのに<br>
-                    毛の色が違っていた。<br>
-                    ... さあ…···<br>
+                <a>猫兄弟物語 <br>
+                    猫の兄弟が住んでいた <br>
+                    二人は兄弟だったのに <br>
+                    毛の色が違っていた。 <br>
+                    ... <br>
+                    さあ…···<br>
                     それが問題だったのだろうか？</a>
             </div>
             <div class="texture_overlay1"></div>
@@ -103,13 +103,13 @@
         function resizeContainer() {
             let container = document.querySelector('.container');
 
-            let aspectRatio = 430 / 932;
+            let aspectRatio = 430 / 932; 
             let newHeight = window.innerHeight;
 
-            let newWidth = newHeight * aspectRatio;
-
-            let scale = newHeight / 932;
-            container.style.transform = `scale(${scale})`;
+            let newWidth = newHeight * aspectRatio; 
+            
+            container.style.width = `${newWidth}px`;
+            container.style.height = `${newHeight}px`;
         }
 
         window.addEventListener('resize', resizeContainer);
