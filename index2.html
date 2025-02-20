@@ -18,8 +18,10 @@
                 background-color: #000000;
                 transform-origin: center center;
                 transition: width 0.2s, height 0.2s;
+                position: relative;
+                overflow: hidden;
             }
-
+            
             #index_box {
                 position: absolute;
                 top: 50%;
@@ -35,27 +37,51 @@
                 z-index: 1000;
             }
 
-            #index_box a {
+            #logo_text{
                 position: absolute;
-                /* Layout Properties */
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                /* UI Properties */
-                text-align: center;
-                font: normal normal bold 8px/20px 'Source Han Serif SC', serif;
-                letter-spacing: 0px;
-                color: #000000;
+                width: 65px;
+                height: 62px;
                 opacity: 1;
-                display: none;
+                transition: opacity 0.5s ease;
+            }
+
+            #text1{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -250px);
+                text-align: center;
+                font: normal normal bold 8px/30px 'Source Han Serif SC', serif;
+                color: #820000;
+                text-align: center;
+                font-weight: 200;
+                letter-spacing: 0px;
+                opacity: 1;
+                z-index: 5000;
+            }
+
+            #text2{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 116px);
+                text-align: center;
+                font: normal normal bold 8px/30px 'Source Han Serif SC', serif;
+                color: #820000;
+                text-align: center;
+                font-weight: 200;
+                letter-spacing: 0px;
+                opacity: 1;
+                z-index: 5000;
             }
 
             .texture_overlay1 {
-                /* Layout Properties */
                 width: 430px;
                 height: 932px;
-                /* UI Properties */
-                background: transparent url("img/paper.jpg") 0% 0% no-repeat padding-box;
+                background: transparent url("src/paper.jpg") 0% 0% no-repeat padding-box;
                 mix-blend-mode: color-burn;
                 opacity: 0.7;
                 z-index: 2000;
@@ -70,7 +96,7 @@
                 width: 430px;
                 height: 932px;
                 transform: matrix(0, 1, -1, 0, 0, 0);
-                background: transparent url("img/slash.png") 0% 0% no-repeat padding-box;
+                background: transparent url("src/slash.png") 0% 0% no-repeat padding-box;
                 mix-blend-mode: color-burn;
                 opacity: 0.2;
                 z-index: 2000;
@@ -80,49 +106,99 @@
                 transform: translate(-50%, -50%);
                 clip-path: inset(10% 10% 10% 10%);
             }
+
+            #main_text{
+                opacity: 0;
+                z-index: 7000;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 50%) scale(0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+
+            #main_text a, .separator{
+                text-align: center;
+                font: normal normal bold 11px/146px 'KoPubWorldBatang', serif;
+                color: #000000;
+                text-align: center;
+                font-weight: 200;
+                letter-spacing: -0.17px;
+            }
+
+            .separator{
+                margin: 0 12px;
+            }
         </style>
     </head>
 
     <body>
         <div class="container">
             <div id="index_box">
-                <a>猫兄弟物語 <br>
-                    猫の兄弟が住んでいた <br>
-                    二人は兄弟だったのに <br>
-                    毛の色が違っていた。 <br>
-                    ... <br>
-                    さあ…···<br>
-                    それが問題だったのだろうか？</a>
+                <img id="logo_text" src="src/logo.png">
             </div>
+            <a id="text1">
+                猫兄弟物語 <br>
+                猫の兄弟が住んでいた。 <br>
+                二人は兄弟だったのに <br>
+                毛の色が違っていた。
+            </a>
+            <a id="text2">
+                ... <br>
+                さあ…··· <br>
+                それが問題だったのだろうか？
+            </a>
+            <div id="main_text"> 
+                <div class="separator">|</div>
+                <a id="m_social">글</a>
+                <div class="separator">|</div>
+                <a id="m_art">그림</a>
+                <div class="separator">|</div>
+                <a id="m_manga">만화</a>
+                <div class="separator">|</div>
+                <a id="m_video">영상</a>
+                <div class="separator">|</div>
+            </div>
+
             <div class="texture_overlay1"></div>
             <div class="texture_overlay2"></div>
         </div>
+
     </body>
 
     <script>
-        function resizeContainer() {
-            let container = document.querySelector('.container');
+        const container = document.querySelector('.container');
+        const logoText = document.querySelector('#logo_text');
+        const mainText = document.querySelector('#main_text');
+        const textOne = document.querySelector('#text1');
+        const textTwo = document.querySelector('#text2');
+        
+        let scrollAmount = 0;  // 스크롤 양을 추적
 
-            let aspectRatio = 430 / 932; 
-            let newHeight = window.innerHeight;
-
-            let newWidth = newHeight * aspectRatio; 
-            
-            container.style.width = `${newWidth}px`;
-            container.style.height = `${newHeight}px`;
-        }
-
-        window.addEventListener('resize', resizeContainer);
-        resizeContainer();
-
-        document.querySelector('.container').addEventListener('click', function () {
-            let indexBox = document.querySelector('#index_box');
-            let indexBoxText = document.querySelector('#index_box a');
-
-            if (window.getComputedStyle(indexBoxText).display == 'none') {
-                indexBoxText.style.display = 'flex';
+        container.addEventListener('wheel', function(event) {
+            // 휠 이벤트가 아래로 돌아가면
+            if (event.deltaY > 0) {
+                scrollAmount += 30; // 아래로 스크롤
             } else {
-                window.location.href = 'main.html';
+                scrollAmount -= 30; // 위로 스크롤
+            }
+
+            // 스크롤 양에 따라 logo_text와 main_text의 상태 변경
+            if (scrollAmount > 50) {
+                logoText.style.opacity = 0; // logo_text 숨기기
+                mainText.style.opacity = 1; // main_text 보이기
+                textOne.style.opacity = 0;
+                textTwo.style.opacity = 0;
+                mainText.style.transform = 'translate(-50%, -50%) scale(1)';
+            } else {
+                logoText.style.opacity = 1; // logo_text 보이기
+                mainText.style.opacity = 0; // main_text 숨기기
+                textOne.style.opacity = 1;
+                textTwo.style.opacity = 1;
+                mainText.style.transform = 'translate(-50%, 50%) scale(1)';
             }
         });
     </script>
