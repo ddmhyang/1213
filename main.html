@@ -53,12 +53,12 @@
                 font-family: 'Source Han Serif SC', serif;
                 font-size: 8px;
                 line-height: 30px;
-                font-weight: 700 !important;
                 color: #820000;
                 text-align: center;
                 letter-spacing: 0px;
                 opacity: 1;
                 z-index: 5000;
+                -webkit-text-stroke: 0.1px #820000;
             }
             #text1{
                 position: absolute;
@@ -118,7 +118,8 @@
 
             #main_text a, .separator{
                 text-align: center;
-                font:  normal normal bold 11px/146px 'KoPubWorldBatang', serif;
+                font: 11px/146px 'KoPubWorldBatang', serif;
+                -webkit-text-stroke: 0.35px #000000;
                 color: #000000;
                 text-align: center;
                 letter-spacing: -0.17px;
@@ -127,13 +128,6 @@
             .separator{
                 margin: 0 12px;
             }
-
-            @media (max-width: 768px) {
-                .container {
-                font-weight: 700;
-                }
-            }
-
         </style>
     </head>
 
