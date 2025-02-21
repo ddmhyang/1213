@@ -5,7 +5,7 @@
             body, html {
                 margin: 0;
                 padding: 0;
-                height: 932px;
+                height: 100%;
                 background-color: #000000;
                 overflow: hidden;
                 display: flex;
@@ -42,7 +42,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 text-align: center;
-                font: normal normal bold 8px/20px 'Source Han Serif SC', serif;
+                font: normal normal bold 8px/30px 'Source Han Serif SC', serif;
                 color: #000000;
                 opacity: 1;
                 display: none;
@@ -93,14 +93,19 @@
             let container = document.querySelector('.container');
             let width = window.innerWidth;
             let height = window.innerHeight;
-            
-            let scaleWidth = width < 430 ? width / 430 : 1;
-            let scaleHeight = height / 932;
-            let scale = Math.min(scaleWidth, scaleHeight);
-            
+
+            let scale = 1;
+
+            if (width < 430) {
+                scale = width / 430;
+            } else {
+                scale = height / 932;
+            }
+
             container.style.transform = `scale(${scale})`;
+            container.style.transformOrigin = 'center center';
         }
-        
+
         window.addEventListener('resize', adjustScale);
         adjustScale();
 
