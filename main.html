@@ -2,14 +2,6 @@
 <html>
     <head>
         <style>
-            @font-face {
-                font-family: 'Source Han Serif SC';
-                src: url('fonts/SourceHanSerifSC-Bold.woff2') format('woff2'),
-                    url('fonts/SourceHanSerifSC-Bold.woff') format('woff');
-                font-weight: bold;
-                font-style: normal;
-            }
-
             html, body {
                 margin: 0;
                 padding: 0;
@@ -135,6 +127,13 @@
             .separator{
                 margin: 0 12px;
             }
+
+            @media (max-width: 768px) {
+                .m-layout {
+                    font-weight: bold;
+                }
+            }
+
         </style>
     </head>
 
@@ -144,12 +143,10 @@
                 <img id="logo_text" src="src/logo.png">
             </div>
             <a id="text1">
-                <b>
-                    猫兄弟物語 <br>
-                    猫の兄弟が住んでいた。 <br>
-                    二人は兄弟だったのに <br>
-                    毛の色が違っていた。
-                </b>
+                猫兄弟物語 <br>
+                猫の兄弟が住んでいた。 <br>
+                二人は兄弟だったのに <br>
+                毛の色が違っていた。
             </a>
             <a id="text2">
                 ... <br>
