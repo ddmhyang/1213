@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <style>
@@ -17,7 +18,7 @@
                 height: 932px;
                 background-color: #000000;
                 transform-origin: center center;
-                transition: width 0.2s, height 0.2s;
+                transition: transform 0.2s;
             }
 
             #index_box {
@@ -27,7 +28,7 @@
                 transform: translate(-50%, -50%);
                 width: 250px;
                 height: 212px;
-                background: #820000 0% 0% no-repeat padding-box;
+                background: #820000;
                 box-shadow: inset 0px 0px 20px #000000;
                 border-radius: 39px;
                 opacity: 1;
@@ -37,47 +38,35 @@
 
             #index_box a {
                 position: absolute;
-                /* Layout Properties */
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                /* UI Properties */
                 text-align: center;
                 font: normal normal bold 8px/20px 'Source Han Serif SC', serif;
-                letter-spacing: 0px;
                 color: #000000;
                 opacity: 1;
                 display: none;
             }
 
-            .texture_overlay1 {
-                /* Layout Properties */
+            .texture_overlay1, .texture_overlay2 {
                 width: 430px;
                 height: 932px;
-                /* UI Properties */
-                background: transparent url("img/paper.jpg") 0% 0% no-repeat padding-box;
-                mix-blend-mode: color-burn;
-                opacity: 0.7;
-                z-index: 2000;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                mix-blend-mode: color-burn;
+            }
+
+            .texture_overlay1 {
+                background: url("img/paper.jpg") no-repeat center/cover;
+                opacity: 0.7;
                 clip-path: inset(10% 10% 10% 10%);
             }
 
             .texture_overlay2 {
-                width: 430px;
-                height: 932px;
-                transform: matrix(0, 1, -1, 0, 0, 0);
-                background: transparent url("img/slash.png") 0% 0% no-repeat padding-box;
-                mix-blend-mode: color-burn;
+                background: url("img/slash.png") no-repeat center/cover;
                 opacity: 0.2;
-                z-index: 2000;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
                 clip-path: inset(10% 10% 10% 10%);
             }
         </style>
@@ -100,25 +89,23 @@
     </body>
 
     <script>
-        function resizeContainer() {
+        function adjustScale() {
             let container = document.querySelector('.container');
-
-            let aspectRatio = 430 / 932; 
-            let newHeight = window.innerHeight;
-
-            let newWidth = newHeight * aspectRatio; 
+            let width = window.innerWidth;
+            let height = window.innerHeight;
             
-            container.style.width = `${newWidth}px`;
-            container.style.height = `${newHeight}px`;
+            let scaleWidth = width < 430 ? width / 430 : 1;
+            let scaleHeight = height / 932;
+            let scale = Math.min(scaleWidth, scaleHeight);
+            
+            container.style.transform = `scale(${scale})`;
         }
-
-        window.addEventListener('resize', resizeContainer);
-        resizeContainer();
+        
+        window.addEventListener('resize', adjustScale);
+        adjustScale();
 
         document.querySelector('.container').addEventListener('click', function () {
-            let indexBox = document.querySelector('#index_box');
             let indexBoxText = document.querySelector('#index_box a');
-
             if (window.getComputedStyle(indexBoxText).display == 'none') {
                 indexBoxText.style.display = 'flex';
             } else {
