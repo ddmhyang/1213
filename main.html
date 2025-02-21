@@ -189,23 +189,43 @@
         adjustScale();
 
     
+        function adjustScale() {
+        let container = document.querySelector('.container');
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        let scale = 1;
+
+        if (width < 430) {
+            scale = width / 430;
+        } else {
+            scale = height / 932;
+        }
+
+        container.style.transform = `scale(${scale})`;
+        container.style.transformOrigin = 'center center';
+        }
+
+        window.addEventListener('resize', adjustScale);
+        adjustScale();
+
         const container = document.querySelector('.container');
         const logoText = document.querySelector('#logo_text');
         const mainText = document.querySelector('#main_text');
         const textOne = document.querySelector('#text1');
         const textTwo = document.querySelector('#text2');
-        
-        let scrollAmount = 0;  // 스크롤 양을 추적
 
-        container.addEventListener('wheel', function(event) {
-            // 휠 이벤트가 아래로 돌아가면
-            if (event.deltaY > 0) {
+        let scrollAmount = 0;  // 스크롤 양을 추적
+        let touchStartY = 0;    // 터치 시작 위치
+        let touchEndY = 0;      // 터치 종료 위치
+
+        function handleScroll(deltaY) {
+            if (deltaY > 0) {
                 scrollAmount += 30; // 아래로 스크롤
             } else {
                 scrollAmount -= 30; // 위로 스크롤
             }
 
-            // 스크롤 양에 따라 logo_text와 main_text의 상태 변경
             if (scrollAmount > 50) {
                 logoText.style.opacity = 0; // logo_text 숨기기
                 mainText.style.opacity = 1; // main_text 보이기
@@ -218,6 +238,28 @@
                 textOne.style.opacity = 1;
                 textTwo.style.opacity = 1;
                 mainText.style.transform = 'translate(-50%, 50%) scale(1)';
+            }
+        }
+
+        // 마우스 휠 이벤트
+        container.addEventListener('wheel', function(event) {
+            handleScroll(event.deltaY);
+        });
+
+        // 터치 시작 이벤트
+        container.addEventListener('touchstart', function(event) {
+            touchStartY = event.touches[0].clientY;
+        });
+
+        // 터치 이동 이벤트
+        container.addEventListener('touchmove', function(event) {
+            touchEndY = event.touches[0].clientY;
+            let deltaY = touchStartY - touchEndY; // 스크롤 방향 계산
+
+            // 너무 작은 이동은 무시 (터치 오차 방지)
+            if (Math.abs(deltaY) > 10) {
+                handleScroll(deltaY);
+                touchStartY = touchEndY; // 계속해서 움직임을 감지
             }
         });
     </script>
