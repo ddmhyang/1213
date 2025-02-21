@@ -2,6 +2,14 @@
 <html>
     <head>
         <style>
+            @font-face {
+                font-family: 'Source Han Serif SC';
+                src: url('fonts/SourceHanSerifSC-Bold.woff2') format('woff2'),
+                    url('fonts/SourceHanSerifSC-Bold.woff') format('woff');
+                font-weight: bold;
+                font-style: normal;
+            }
+
             html, body {
                 margin: 0;
                 padding: 0;
@@ -47,29 +55,13 @@
                 height: 62px;
                 opacity: 1;
                 transition: opacity 0.5s ease;
-            }
 
-            #text1{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -250px);
-                text-align: center;
-                font: normal normal bold 8px/30px 'Source Han Serif SC', serif;
-                color: #820000;
-                text-align: center;
-                letter-spacing: 0px;
-                opacity: 1;
-                z-index: 5000;
             }
-
-            #text2{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, 116px);
-                text-align: center;
-                font: normal normal bold 8px/30px 'Source Han Serif SC', serif;
+            #text1, #text2 {
+                font-family: 'Source Han Serif SC', serif;
+                font-size: 8px;
+                line-height: 30px;
+                font-weight: 700;
                 color: #820000;
                 text-align: center;
                 letter-spacing: 0px;
