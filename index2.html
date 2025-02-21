@@ -37,21 +37,16 @@
             }
 
             #index_box a {
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 text-align: center;
-                font-family: source-han-serif-tc, serif;
-                font-style: normal;
-                font-weight: 700;
-                font-size: 8px;
-                line-height: 20px;
+                font: 8px/20px 'Source Han Serif SC', serif;
+                -webkit-text-stroke: 0.35px #000000;
                 color: #000000;
                 opacity: 1;
-                visibility: hidden;
+                display: none;
             }
 
             .texture_overlay1, .texture_overlay2 {
@@ -65,17 +60,15 @@
             }
 
             .texture_overlay1 {
-                background: url("src/paper.jpg") no-repeat center/cover;
+                background: url("img/paper.jpg") no-repeat center/cover;
                 opacity: 0.7;
                 clip-path: inset(10% 10% 10% 10%);
-                z-index: 2000;
             }
 
             .texture_overlay2 {
-                background: url("src/slash.png") no-repeat center/cover;
+                background: url("img/slash.png") no-repeat center/cover;
                 opacity: 0.2;
                 clip-path: inset(10% 10% 10% 10%);
-                z-index: 2000;
             }
         </style>
     </head>
@@ -119,13 +112,11 @@
 
         document.querySelector('.container').addEventListener('click', function () {
             let indexBoxText = document.querySelector('#index_box a');
-            if (indexBoxText.style.visibility === 'hidden') {
-                indexBoxText.style.visibility = 'visible';
-                indexBoxText.style.opacity = '1';
+            if (window.getComputedStyle(indexBoxText).display == 'none') {
+                indexBoxText.style.display = 'flex';
             } else {
                 window.location.href = 'main.html';
             }
         });
-
     </script>
 </html>
