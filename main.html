@@ -170,6 +170,22 @@
     </body>
 
     <script>
+        function adjustScale() {
+            let container = document.querySelector('.container');
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            
+            let scaleWidth = width < 430 ? width / 430 : 1;
+            let scaleHeight = height / 932;
+            let scale = Math.min(scaleWidth, scaleHeight);
+            
+            container.style.transform = `scale(${scale})`;
+        }
+        
+        window.addEventListener('resize', adjustScale);
+        adjustScale();
+
+        
         const container = document.querySelector('.container');
         const logoText = document.querySelector('#logo_text');
         const mainText = document.querySelector('#main_text');
