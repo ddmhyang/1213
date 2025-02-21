@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
     <head>
         <style>
-            body, html {
+            html, body {
                 margin: 0;
                 padding: 0;
                 height: 100%;
@@ -57,7 +58,6 @@
                 font: normal normal bold 8px/30px 'Source Han Serif SC', serif;
                 color: #820000;
                 text-align: center;
-                font-weight: 200;
                 letter-spacing: 0px;
                 opacity: 1;
                 z-index: 5000;
@@ -72,7 +72,6 @@
                 font: normal normal bold 8px/30px 'Source Han Serif SC', serif;
                 color: #820000;
                 text-align: center;
-                font-weight: 200;
                 letter-spacing: 0px;
                 opacity: 1;
                 z-index: 5000;
@@ -122,10 +121,9 @@
 
             #main_text a, .separator{
                 text-align: center;
-                font: normal normal bold 11px/146px 'KoPubWorldBatang', serif;
+                font:  normal normal bold 11px/146px 'KoPubWorldBatang', serif;
                 color: #000000;
                 text-align: center;
-                font-weight: 200;
                 letter-spacing: -0.17px;
             }
 
@@ -169,23 +167,28 @@
 
     </body>
 
-    <script>
+    <script>        
         function adjustScale() {
             let container = document.querySelector('.container');
             let width = window.innerWidth;
             let height = window.innerHeight;
-            
-            let scaleWidth = width < 430 ? width / 430 : 1;
-            let scaleHeight = height / 932;
-            let scale = Math.min(scaleWidth, scaleHeight);
-            
+
+            let scale = 1;
+
+            if (width < 430) {
+                scale = width / 430;
+            } else {
+                scale = height / 932;
+            }
+
             container.style.transform = `scale(${scale})`;
+            container.style.transformOrigin = 'center center';
         }
-        
+
         window.addEventListener('resize', adjustScale);
         adjustScale();
 
-        
+    
         const container = document.querySelector('.container');
         const logoText = document.querySelector('#logo_text');
         const mainText = document.querySelector('#main_text');
