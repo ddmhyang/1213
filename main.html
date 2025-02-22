@@ -44,10 +44,27 @@
                 height: 212px;
                 background: #820000 0% 0% no-repeat padding-box;
                 box-shadow: inset 0px 0px 20px #000000;
-                border-radius: 2.5em;
+                border-radius: 39px;
                 opacity: 1;
                 display: flex;
                 z-index: 1000;
+            }
+
+            @media (max-width: 768px) {  /* 모바일 화면 크기 */
+                #index_box {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 250px;
+                    height: 212px;
+                    background: #820000 0% 0% no-repeat padding-box;
+                    box-shadow: inset 0px 0px 20px #000000;
+                    border-radius: 90px;
+                    opacity: 1;
+                    display: flex;
+                    z-index: 1000;
+                }
             }
 
             #logo_text{
