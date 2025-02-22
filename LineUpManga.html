@@ -148,17 +148,26 @@
                 transform: translateX(-50%);
             }
 
+            #box{
+                width: 400px;
+                position: absolute;
+                height: 590px;
+                z-index: 5000;
+                top: 187px;
+                opacity: 1;
+                overflow: hidden;
+            }
+
             #title {
-                top:50%;
-                transform: translateY(-48.5%);
+                height: 590px;
+                top: 0px;
                 left: 90px;
                 position: absolute;
                 display: flex;
                 flex-direction: column;
                 align-items: center; /* 중앙 정렬 */
-                gap: 56px; /* 각 항목 사이 간격 */
+                gap: 45.35px; /* 각 항목 사이 간격 */
                 opacity: 1;
-                z-index: 5000;
             }
 
             #title a{
@@ -166,7 +175,6 @@
                 font-family: "source-han-serif-japanese", serif;
                 font-weight: 900;
                 font-size: 11px;
-                line-height: 0px;
                 -webkit-text-stroke: 0.1px #000000;
                 color: #000000;
                 letter-spacing: -0.17px;
@@ -174,16 +182,15 @@
             }
 
             #content {
-                top:50%;
-                transform: translateY(-48.5%);
-                left: 266px;
+                height: 590px;
+                top: 0px;
+                left: 276px;
                 position: absolute;
                 display: flex;
                 flex-direction: column;
                 align-items: center; /* 중앙 정렬 */
-                gap: 56px; /* 각 항목 사이 간격 */
+                gap: 48px; /* 각 항목 사이 간격 */
                 opacity: 1;
-                z-index: 5000;
             }
 
             #content a{
@@ -191,7 +198,6 @@
                 font-family: "source-han-serif-japanese", serif;
                 font-weight: 900;
                 font-size: 9px;
-                line-height: 0px;
                 letter-spacing: -0.17px;
                 -webkit-text-stroke: 0.1px #000000;
                 color: #000000;
@@ -228,33 +234,42 @@
                 <div id="index_box"></div>
                 <a id = "neco">猫名簿</a>
                 <div id = "head_line"></div>
-
-                <div id = "title">
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
-                </div>
-    
-                <div id = "content">
-                    <a>작가 이름</a>
-                    <a>작가 이름</a>
-                    <a>작가 이름</a>
-                    <a>작가 이름</a>
-                    <a>작가 이름</a>
-                    <a>작가 이름</a>
-                    <a>작가 이름</a>
-                    <a>작가 이름</a>
-                    <a>작가 이름</a>
-                    <a>작가 이름</a>
-                    <a>작가 이름</a>
+                
+                <div id = "box">
+                    <div id = "title">
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                        <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    </div>
+        
+                    <div id = "content">
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                        <a>작가 이름</a>
+                    </div>
                 </div>
     
                 <div id = "collab"><a href="https://x.com/neko09040810">SUNGHO TAESAN FIRST COLLABORATION</a></div>
@@ -262,9 +277,9 @@
             
             <div id = "page">
                 <a id = "page_manga">(만화)</a>
-                <a id="page_novel" href="LineUpNovel.html">(글)</a>
-                <a id="page_art" href="LineUpArt.html">(그림)</a>
-                <a id="page_video" href="LineUpVideo.html">(영상)</a>
+                <a id = "page_novel" href="LineUpNovel.html">(글)</a>
+                <a id = "page_art" href="LineUpArt.html">(그림)</a>
+                <a id = "page_video" href="LineUpVideo.html">(영상)</a>
                 <a id = "page_return" href="main.html">(돌아가기)</a>
             </div>
             
@@ -290,5 +305,44 @@
 
         window.addEventListener('resize', adjustScale);
         adjustScale();
+
+
+        const title = document.getElementById("title");
+        const content = document.getElementById("content");
+        let startY = 0;
+        let currentY = 0;
+        let isDragging = false;
+
+        function updateMaxScroll() {
+            return title.offsetHeight - title.scrollHeight + 100;
+        }
+
+        // 터치 시작
+        document.addEventListener("touchstart", (e) => {
+            startY = e.touches[0].clientY - currentY;
+            isDragging = true;
+        });
+
+        // 터치 이동
+        document.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            currentY = e.touches[0].clientY - startY;
+            currentY = Math.max(Math.min(0, currentY), updateMaxScroll()); // 동적 최대 스크롤 설정
+            title.style.transform = `translateY(${currentY}px)`;
+            content.style.transform = `translateY(${currentY}px)`;
+        });
+
+        // 터치 종료
+        document.addEventListener("touchend", () => {
+            isDragging = false;
+        });
+
+        // 마우스 휠 스크롤
+        document.addEventListener("wheel", (e) => {
+            currentY -= e.deltaY;
+            currentY = Math.max(Math.min(0, currentY), updateMaxScroll()); // 동적 최대 스크롤 설정
+            title.style.transform = `translateY(${currentY}px)`;
+            content.style.transform = `translateY(${currentY}px)`;
+        });
     </script>
 </html>
