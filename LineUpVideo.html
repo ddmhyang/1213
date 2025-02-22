@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            (function(d) {
+              var config = {
+                kitId: 'odi7jtq',
+                scriptTimeout: 3000,
+                async: true
+              },
+              h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+        </script>
+
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #000000;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container {
+                width: 430px;
+                height: 932px;
+                background-color: #000000;
+                position: absolute;
+                transition: width 0.2s, height 0.2s;
+                overflow: hidden;
+        }
+
+            
+            #index_box {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 307px;
+                height: 702px;
+                background: #820000 0% 0% no-repeat padding-box;
+                box-shadow: inset 0px 0px 20px #000000;
+                border-radius: 39px;
+                opacity: 1;
+                display: flex;
+                z-index: 1000;
+            }
+            
+            .texture_overlay1, .texture_overlay2 {
+                width: 430px;
+                height: 932px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                mix-blend-mode: color-burn;
+                z-index: 2000;
+            }
+
+            .texture_overlay1 {
+                background: url("src/paper.jpg") no-repeat center/cover;
+                opacity: 0.7;
+                clip-path: inset(10% 10% 10% 10%);
+            }
+
+            .texture_overlay2 {
+                background: url("src/slash.png") no-repeat center/cover;
+                opacity: 0.2;
+                clip-path: inset(10% 10% 10% 10%);
+            }
+
+            #neco{
+                position: absolute;
+                top: 148px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 45px;
+                height: 21px;
+                text-align: center;
+                opacity: 1;
+                display: flex;
+                z-index: 5000;
+                font-family: "source-han-serif-japanese", serif;
+                font-weight: 900;
+                font-size: 15px;
+                line-height: 0px;
+                letter-spacing: -0.23px;
+                color: #000000;
+            }
+
+            #head_line{
+                position: absolute;
+                top: 170px;
+                left:50%;
+                transform: translateX(-50%);
+                width: 254px;
+                height: 0px;
+                /* UI Properties */
+                border: 1px solid #000000;
+                opacity: 1;
+                display: flex;
+                z-index: 5000;
+            }
+
+            #page a{
+                position: absolute;
+                text-align: center;
+                font: 12px/0px 'Source Han Serif SC', serif;
+                -webkit-text-stroke: 0.2px #820000;
+                letter-spacing: -0.18px;
+                color: #820000;
+                opacity: 1;
+                display: flex;
+                z-index: 5000;
+                text-decoration: none;
+            }
+
+            #page_video{
+                top: 105px;
+                left: 30px;
+            }
+
+            #page_novel{
+                top: 670px;
+                left: 380px;
+            }
+
+            #page_art{
+                top: 728px;
+                left: 380px;
+            }
+
+            #page_manga{
+                top: 786px;
+                left: 380px;
+            }
+
+            #page_return{
+                top: 844px;
+                left: 187px;
+            }
+
+            #title {
+                top:50%;
+                transform: translateY(-48.5%);
+                left: 90px;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* 중앙 정렬 */
+                gap: 56px; /* 각 항목 사이 간격 */
+                opacity: 1;
+                z-index: 5000;
+            }
+
+            #title a{
+                text-align: center;
+                font-family: "source-han-serif-japanese", serif;
+                font-weight: 900;
+                font-size: 11px;
+                line-height: 0px;
+                -webkit-text-stroke: 0.1px #000000;
+                color: #000000;
+                letter-spacing: -0.17px;
+                text-decoration: none;
+            }
+
+            #content {
+                top:50%;
+                transform: translateY(-48.5%);
+                left: 266px;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* 중앙 정렬 */
+                gap: 56px; /* 각 항목 사이 간격 */
+                opacity: 1;
+                z-index: 5000;
+            }
+
+            #content a{
+                text-align: center;
+                font-family: "source-han-serif-japanese", serif;
+                font-weight: 900;
+                font-size: 9px;
+                line-height: 0px;
+                letter-spacing: -0.17px;
+                -webkit-text-stroke: 0.1px #000000;
+                color: #000000;
+                text-decoration: none;
+            }
+
+            #collab{
+                position: absolute;
+                top: 775px;
+                left:50%;
+                transform: translateX(-50%);
+                /* UI Properties */
+                opacity: 1;
+                z-index: 5000;
+            }
+
+            #collab a{
+                text-align: center;
+                font-family: "source-han-serif-japanese", serif;
+                font-weight: 900;
+                font-size: 5px;
+                line-height: 0px;
+                letter-spacing: -0.07px;
+                color: #000000;
+                text-decoration: none;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div id = "index">
+                <div id="index_box"></div>
+                <a id = "neco">猫名簿</a>
+                <div id = "head_line"></div>
+
+                <div id = "title">
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                </div>
+    
+                <div id = "content">
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                    <a href="ContentNovel1.html">제목이 들어갑니다.</a>
+                </div>
+    
+                <div id = "collab"><a href="https://x.com/neko09040810">SUNGHO TAESAN FIRST COLLABORATION</a></div>
+            </div>
+            
+            <div id = "page">
+                <a id = "page_video">(영상)</a>
+                <a id="page_novel" href="LineUpNovel.html">(글)</a>
+                <a id="page_art" href="LineUPArt.html">(그림)</a>
+                <a id="page_manga" href="LineUPManga.html">(만화)</a>
+                <a id = "page_return" href="main.html">(돌아가기)</a>
+            </div>
+            
+            
+
+            <div class="texture_overlay1"></div>
+            <div class="texture_overlay2"></div>
+        </div>
+
+    </body>
+
+    <script>
+        function adjustScale() {
+            let container = document.querySelector('.container');
+            let width = window.innerWidth;
+            let height = window.innerHeight;;
+
+            let scale = Math.min(width / 430, height / 932);
+
+            container.style.transform = `scale(${scale})`;
+            container.style.transformOrigin = 'center center';
+        }
+
+        window.addEventListener('resize', adjustScale);
+        adjustScale();
+    </script>
+</html>
