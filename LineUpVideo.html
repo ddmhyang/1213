@@ -57,20 +57,22 @@
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%) scaleX(-1);
                 mix-blend-mode: color-burn;
                 z-index: 2000;
             }
 
             .texture_overlay1 {
-                background: url("src/paper.jpg") no-repeat center/cover;
+                background: url("src/paper.jpg") repeat;
+                background-size: 430px 932px;
                 opacity: 0.7;
                 clip-path: inset(10% 10% 10% 10%);
             }
 
             .texture_overlay2 {
-                background: url("src/slash.png") no-repeat center/cover;
-                opacity: 0.2;
+                background: url("src/slash.png") repeat;
+                background-size: 430px 932px; /* 배경 이미지를 컨테이너 크기에 맞춤 */
+                opacity: 0.3;
                 clip-path: inset(10% 10% 10% 10%);
             }
 
