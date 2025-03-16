@@ -7,14 +7,23 @@
     <style>
         @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 
-        body {
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000;
-            margin: auto 0;
             flex-direction: column;
             font-family: "GalmuriMono9";
+        }
+
+        .container {
+            transform-origin: center center;
+            transition: transform 0.2s;
         }
 
         #container,header, #main {
@@ -546,6 +555,19 @@
             event.stopPropagation(); // 이벤트 전파 방지
         });
 
+        function adjustScale() {
+            let container = document.querySelector('.container');
+            let width = window.innerWidth;
+            let height = window.innerHeight;;
+
+            let scale = Math.min(width / 1000, height / 1600);
+
+            container.style.transform = `scale(${scale})`;
+            container.style.transformOrigin = 'center center';
+        }
+
+        window.addEventListener('resize', adjustScale);
+        adjustScale();
 
     </script>
 </body>
