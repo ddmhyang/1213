@@ -219,7 +219,7 @@
                     transform: translate(-50%, 0);
                 }
                 to {
-                    transform: translate(-50%, -300%);
+                    transform: translate(-50%, -200%);
                 }
             }
             
@@ -372,6 +372,8 @@
             changeBackgroundColor();
         }, 3000);
 
+        
+
         const bottomBar = document.getElementById("bottom_bar");
         let startY = 0;
         let isDragging = false;
@@ -381,15 +383,16 @@
             startY = event.clientY;
         });
 
-        bottomBar.addEventListener("mousemove", (event) => {
+        window.addEventListener("mousemove", (event) => {
             if (!isDragging) return;
             let diff = startY - event.clientY;
-            if (diff > 50) { // 50px 이상 움직이면 실행
+            if (diff > 10) { // 50px 이상 위로 이동하면 실행
                 triggerSlideUp();
+                isDragging = false; // 실행 후 드래그 종료
             }
         });
 
-        bottomBar.addEventListener("mouseup", () => {
+        window.addEventListener("mouseup", () => {
             isDragging = false;
         });
 
@@ -401,8 +404,9 @@
         bottomBar.addEventListener("touchmove", (event) => {
             if (!isDragging) return;
             let diff = startY - event.touches[0].clientY;
-            if (diff > 50) { // 터치 시 50px 이상 움직이면 실행
+            if (diff > 10) { // 터치 시 50px 이상 움직이면 실행
                 triggerSlideUp();
+                isDragging = false;
             }
         });
 
@@ -416,8 +420,9 @@
             // 애니메이션이 끝난 후 페이지 이동
             setTimeout(() => {
                 window.location.href = "amoeba.html";
-            }, 500); // 애니메이션 지속 시간과 맞춰야 함
+            }, 350); // 애니메이션 지속 시간과 맞춰야 함
         }
+
 
     </script>
 
