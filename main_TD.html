@@ -5,15 +5,19 @@
             @font-face {
                 font-family: 'SBAggroB';
                 src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
-                font-weight: normal;
-                font-style: normal;
             }
+            @font-face {
+                font-family: 'S-CoreDream-3Light';
+                src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+           }
 
             html, body {
                 margin: 0;
                 padding: 0;
                 height: 100%;
-                background: #FFEDF6;
+                border-radius: 40px;
+                background: linear-gradient(0deg, rgba(234, 222, 214, 0.50) 0%, rgba(234, 222, 214, 0.50) 100%), url("img/background.png") lightgray 50% / cover no-repeat;
+                background-blend-mode: overlay, lighten, normal;                
                 display: flex;
                 overflow: hidden;
                 justify-content: center;
@@ -23,7 +27,6 @@
             .container {
                 width: 2560px;
                 height: 1600px;
-                background: #FFEDF6;
                 transform-origin: center center;
                 transition: width 0.2s, height 0.2s;
                 position: relative;
@@ -60,16 +63,13 @@
                 height: 1228.77px;
                 flex-shrink: 0;
                 border-radius: 40px;
-                background-color: #FFF;
+                background: linear-gradient(0deg, rgba(234, 222, 214, 0.50) 0%, rgba(234, 222, 214, 0.50) 100%), url("img/background.png") lightgray 50% / cover no-repeat;
                 z-index: 2000;
                 transition: opacity 1s ease-in-out;
                 opacity: 1;
             }
 
-            #background_img_NY, 
-            #background_img_TD, 
-            #background_img_XM, 
-            #background_img_1213 {
+            #background_img_NY {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -82,27 +82,8 @@
                 transition: opacity 1s ease-in-out; /* 부드러운 변화 */
                 opacity: 0; /* 기본적으로 숨김 */
                 border-radius: 40px;
+                background: linear-gradient(0deg, rgba(219, 227, 254, 0.50) 0%, rgba(219, 227, 254, 0.50) 100%), url("img/icon_XM.png") lightgray 50% / cover no-repeat;
             }
-
-            #background_img_1213 {
-                opacity: 1; /* 처음에 보이도록 설정 */
-            }
-
-
-            #background_img_NY{
-                background: linear-gradient(0deg, rgba(219, 227, 254, 0.50) 0%, rgba(219, 227, 254, 0.50) 100%), url("img/index_NY.jpg") lightgray 50% / cover no-repeat;
-            }
-
-            #background_img_TD{
-                background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url("img/index_TD.jpg") lightgray -185.256px 0px / 158.379% 100% no-repeat;
-            }
-
-            #background_img_XM{
-                background: linear-gradient(0deg, rgba(219, 227, 254, 0.50) 0%, rgba(219, 227, 254, 0.50) 100%), url("img/index_XM.png") lightgray -141.654px 0px / 151.52% 100% no-repeat;
-            }
-
-            #background_img_1213{
-                background: linear-gradient(0deg, rgba(255, 245, 250, 0.50) 0%, rgba(255, 245, 250, 0.50) 100%), url("img/index_1213.png") lightgray 50% / cover no-repeat;            }
 
             #top_bar{
                 position: absolute;
@@ -130,75 +111,21 @@
 
             #time{
                 position: absolute;
-                width: 575px;
-                height: 87px;
+                width: 192px;
+                height: 29px;
                 flex-shrink: 0;
                 color: #FFF;
-                text-align: center;
                 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                font-family: "SBAggroB";
-                font-size: 96px;
+                font-family: "S-CoreDream-3Light";
+                font-size: 30px;
                 font-style: normal;
-                font-weight: 200;
+                font-weight: 900;
                 line-height: normal;
-                top:193.88px;
-                left:50%;
-                transform: translateX(-50%);
+                letter-spacing: 3.5px; /* 글자 간격을 2px로 설정 */
+                left:34px;
+                top:15px;
                 z-index: 5000;
             }
-
-            #app_1213{
-                position: absolute;
-                width: 150px;
-                height: 150px;
-                flex-shrink: 0;
-                border-radius: 30px;
-                background: url("img/icon_1213.png") lightgray 50% / cover no-repeat;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                z-index: 3000;
-                top: 440.88px;
-                left: 105.33px;
-            }
-
-            #app_NY{
-                position: absolute;
-                width: 150px;
-                height: 150px;
-                flex-shrink: 0;
-                border-radius: 30px;
-                background: url("img/icon_NY.png") lightgray 50% / cover no-repeat;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                z-index: 3000;
-                top: 440.88px;
-                left: 381.33px;
-            }
-
-            #app_TD{
-                position: absolute;
-                width: 150px;
-                height: 150px;
-                flex-shrink: 0;
-                border-radius: 30px;
-                background: url("img/icon_TD.png") lightgray 50% / cover no-repeat;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                z-index: 3000;
-                top: 771.88px;
-                left: 105.33px;
-            }
-
-            #app_XM{
-                position: absolute;
-                width: 150px;
-                height: 150px;
-                flex-shrink: 0;
-                border-radius: 30px;
-                background: url("img/icon_XM.png") lightgray 50% / cover no-repeat;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                z-index: 3000;
-                top: 771.88px;
-                left: 381.33px;
-            }
-            
 
             #bottom_bar{
                 position: absolute;
@@ -214,6 +141,101 @@
                 z-index: 5000;
             }
 
+            #text{
+                top:206.89px;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                width: 368px;
+                color: #FFF;
+                text-align: center;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                font-family: "SB Aggro";
+                font-size: 64px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                z-index: 3000;
+            }
+
+            #main_img{
+                top:320.89px;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                background: url("img/icon_TD.png") lightgray -578px 0px / 327.381% 100% no-repeat;
+                box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.25);
+                width: 504px;
+                height: 550px;
+                flex-shrink: 0;
+            }
+
+            #app_bar{
+                top:961px;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                width: 560px;
+                height: 166.33px;
+                flex-shrink: 0;
+                border-radius: 60px;
+                background: rgba(255, 255, 255, 0.29);
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                z-index: 3000;
+            }
+
+            #app1{
+                position: absolute;
+                z-index: 4000;
+                width: 96px;
+                height: 96px;
+                top:993.75px;
+                left:69.33px;
+                flex-shrink: 0;
+                border-radius: 30px;
+                background: url("img/menu_TD1.png") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            #app2{
+                position: absolute;
+                z-index: 4000;
+                width: 96px;
+                height: 96px;
+                flex-shrink: 0;
+                top:993.75px;
+                left:202.33px;
+                border-radius: 30px;
+                background: url("img/menu_TD2.png") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            #app3{
+                position: absolute;
+                z-index: 4000;
+                width: 96px;
+                height: 96px;
+                flex-shrink: 0;
+                top:993.75px;
+                left:335.33px;
+                border-radius: 30px;
+                background: url("img/menu_TD3.jpg") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            #app4{
+                position: absolute;
+                z-index: 4000;
+                width: 96px;
+                height: 96px;
+                flex-shrink: 0;
+                top:993.75px;
+                left:468.33px;
+                border-radius: 30px;
+                background: url("img/menu_TD4.jpg") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+            
             @keyframes slideUp {
                 from {
                     transform: translate(-50%, 0);
@@ -227,7 +249,6 @@
                 animation: slideUp 0.5s ease-in-out forwards;
             }
             
-            
         </style>
     </head>
 
@@ -237,15 +258,20 @@
             <div id="index_box">
                 <div id="background_window">
                     <div id="background_img_NY"></div>
-                    <div id="background_img_TD"></div>
-                    <div id="background_img_XM"></div>
-                    <div id="background_img_1213"></div>
                     <div id="time"></div>
 
-                    <div id="app_1213"></div>
-                    <div id="app_NY"></div>
-                    <div id="app_TD"></div>
-                    <div id="app_XM"></div>
+                    <div id="navi">
+                        <div id="text">Teddy</div>
+                        <div id="main_img"></div>
+                    </div>
+
+                    <div id="app">
+                        <div id="app_bar"></div>
+                        <div id="app1"></div>
+                        <div id="app2"></div>
+                        <div id="app3"></div>
+                        <div id="app4"></div>
+                    </div>
                 </div>
 
                 <div id="top_bar">
@@ -253,9 +279,10 @@
                 </div>
                 <div id="bottom_bar"></div>
             </div>
-        </div>
 
-    </body>
+
+            <iframe id = "song" width="0" height="0" src="https://www.youtube.com/embed/MJM2e-IotSE?autoplay=1&mute=0&controls=0&loop=1&playlist=MJM2e-IotSE&si=iRmPLKTf9SKSjMHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+        </body>
 
     <script>
         /*window*/
@@ -294,103 +321,36 @@
         setInterval(updateTime, 1000); // 1초마다 업데이트
         updateTime(); // 페이지 로드 시 즉시 실행
 
-        const apps = [
-            document.getElementById("app_1213"),
-            document.getElementById("app_NY"),
-            document.getElementById("app_TD"),
-            document.getElementById("app_XM")
-        ];
 
-        document.getElementById("app_1213").addEventListener("click", function() {
-            window.location.href = "main_1213.html";
-        });
+        // 애플리케이션 아이콘 목록
+        const appIcons = ["app1", "app2", "app3", "app4"];
 
-        document.getElementById("app_NY").addEventListener("click", function() {
-            window.location.href = "main_NY.html";
-        });
-
-        
-        document.getElementById("app_TD").addEventListener("click", function() {
-            window.location.href = "main_TD.html";
-        });
-
-        
-        document.getElementById("app_XM").addEventListener("click", function() {
-            window.location.href = "main_XM.html";
-        });
-        
-        
-        const backgrounds = [
-            document.getElementById("background_img_1213"),
-            document.getElementById("background_img_NY"),
-            document.getElementById("background_img_TD"),
-            document.getElementById("background_img_XM")
-        ];
-        
-        const backgroundColors = ["#FFEDF6", "#ECEFFB", "#DCDCDC", "#D0D3DE"];
-        let currentIndex = 0;
-        let hoverActive = false;
-    
-        function changeBackground() {
-            if (hoverActive) return; // 마우스 호버 상태에서는 자동 변경 안 함
-            let prevIndex = currentIndex;
-            currentIndex = (currentIndex + 1) % backgrounds.length;
-    
-            // 이전 배경 서서히 숨기기
-            backgrounds[prevIndex].style.opacity = "0";
-    
-            setTimeout(() => {
-                // 새로운 배경 서서히 보이기
-                backgrounds[currentIndex].style.opacity = "1";
-            }, 5);
-        }
-    
-        function changeBackgroundColor() {
-            if (hoverActive) return; // 마우스 호버 상태에서는 배경색 변경 안 함
-            let colorIndex = currentIndex % backgroundColors.length;
-            let newColor = backgroundColors[colorIndex];
-    
-            document.documentElement.style.background = newColor;
-            document.body.style.background = newColor;
-    
-            let container = document.querySelector('.container');
-            if (container) {
-                container.style.background = newColor;
-            }
-        }
-    
-        /* 마우스를 올리면 해당 배경 표시 + 크기 확대 */
-        apps.forEach((app, index) => {
+        // 각 아이콘에 이벤트 추가
+        appIcons.forEach((id) => {
+            let app = document.getElementById(id);
+            
+            // 마우스를 올리면 확대
             app.addEventListener("mouseenter", () => {
-                hoverActive = true; // 자동 변경 중단
-                backgrounds.forEach((bg, i) => {
-                    bg.style.opacity = i === index ? "1" : "0"; // 해당 배경만 보이기
-                });
-                app.style.transform = "scale(1.1)"; // 아이콘 확대
-
-                // 🔥 여기에 배경색 변경 추가!
-                let newColor = backgroundColors[index];
-                document.documentElement.style.background = newColor;
-                document.body.style.background = newColor;
-                let container = document.querySelector('.container');
-                if (container) {
-                    container.style.background = newColor;
-                }
+                app.style.transition = "transform 0.2s ease-in-out";
+                app.style.transform = "scale(1.1)";
             });
 
+            // 마우스를 내리면 원래 크기로 복귀
             app.addEventListener("mouseleave", () => {
-                hoverActive = false; // 자동 변경 다시 시작
-                app.style.transform = "scale(1)"; // 원래 크기로
+                app.style.transform = "scale(1)";
+            });
+
+            // 클릭 시 페이지 이동
+            app.addEventListener("click", () => {
+                window.location.href = "amoeba.html";
             });
         });
-
+        
     
-        // 3초마다 배경 변경 (호버 중이 아닐 때만)
-        setInterval(() => {
-            changeBackground();
-            changeBackgroundColor();
-        }, 3000);
-
+        // YouTube API 로드
+        let tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.body.appendChild(tag);
         
 
         const bottomBar = document.getElementById("bottom_bar");
@@ -441,8 +401,6 @@
                 window.location.href = "amoeba.html";
             }, 350); // 애니메이션 지속 시간과 맞춰야 함
         }
-
-
     </script>
 
 </html>
