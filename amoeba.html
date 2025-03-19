@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                background-color: #ECEFFB;
+                display: flex;
+                overflow: hidden;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container {
+                width: 2560px;
+                height: 1600px;
+                background-color: #ff0000;
+                transform-origin: center center;
+                transition: width 0.2s, height 0.2s;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            #index_box {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1000;
+                width: 672px;
+                height: 1261px;
+                flex-shrink: 0;
+                border-radius: 50px;
+                background: #000;
+                border-radius: 50px;
+                background: #000;
+                box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.49);
+            }
+
+            #background_window_NY{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 634.667px;
+                height: 1228.77px;
+                flex-shrink: 0;
+                border-radius: 40px;
+                background: linear-gradient(0deg, rgba(219, 227, 254, 0.50) 0%, rgba(219, 227, 254, 0.50) 100%), url("img/index_NY.jpg") lightgray 50% / cover no-repeat;
+                z-index: 2000;
+            }
+
+            #top_bar{
+                position: absolute;
+                top: 13.09px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 326.667px;
+                height: 55.395px;
+                flex-shrink: 0;
+                border-radius: 50px;
+                background: #000;
+                z-index: 2500;
+            }
+
+            #top_camera{
+                position: absolute;
+                top: 15px;
+                left: 17px;
+                width: 25px;
+                height: 25px;
+                flex-shrink: 0;
+                fill: #FFF;
+                z-index: 2500;
+            }
+
+            #time{
+                position: absolute;
+                width: 575px;
+                height: 87px;
+                flex-shrink: 0;
+                color: #FFF;
+                text-align: center;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                font-family: "SB Aggro";
+                font-size: 96px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                top:193.88px;
+                left:50%;
+                transform: translateX(-50%);
+                z-index: 5000;
+            }
+
+            #app_1213{
+                position: absolute;
+                width: 170px;
+                height: 170px;
+                flex-shrink: 0;
+                border-radius: 30px;
+                background: url("img/icon_1213.png") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                z-index: 3000;
+                top: 440.88px;
+                left: 94.33px;
+            }
+
+            #app_NY{
+                position: absolute;
+                width: 170px;
+                height: 170px;
+                flex-shrink: 0;
+                border-radius: 30px;
+                background: url("img/icon_NY.png") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                z-index: 3000;
+                top: 440.88px;
+                left: 370.33px;
+            }
+
+            #app_TD{
+                position: absolute;
+                width: 170px;
+                height: 170px;
+                flex-shrink: 0;
+                border-radius: 30px;
+                background: url("img/icon_TD.png") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                z-index: 3000;
+                top: 771.88px;
+                left: 95.33px;
+            }
+
+            #app_XM{
+                position: absolute;
+                width: 170px;
+                height: 170px;
+                flex-shrink: 0;
+                border-radius: 30px;
+                background: url("img/icon_XM.png") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                z-index: 3000;
+                top: 771.88px;
+                left: 370.33px;
+            }
+            
+
+            #bottom_bar{
+                position: absolute;
+                top:1194.89px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 250px;
+                height: 15px;
+                flex-shrink: 0;
+                border-radius: 50px;
+                background: rgba(0, 0, 0, 0.28);
+                background-color: #00000070;
+                z-index: 5000;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="index_box">
+                <div id="background_window_NY">
+                    <div id="time"></div>
+
+                    <div id="app_1213"></div>
+                    <div id="app_NY"></div>
+                    <div id="app_TD"></div>
+                    <div id="app_XM"></div>
+                </div>
+
+                <div id="top_bar">
+                    <img id="top_camera" src="img/top_camera.png">
+                </div>
+                <div id="bottom_bar"></div>
+            </div>
+        </div>
+
+    </body>
+
+    <script>
+        /*window*/
+        function adjustScale() {
+        let container = document.querySelector('.container');
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        let scale = 1;
+
+        if (height > 1000) {
+            scale = width / 720;
+        } else {
+            scale = height / 1600;
+        }
+
+        container.style.transform = `scale(${scale})`;
+        container.style.transformOrigin = 'center center';
+        }
+
+        window.addEventListener('resize', adjustScale);
+        adjustScale();
+
+        /*time*/
+        function updateTime() {
+            const timeElement = document.querySelector('#time');
+            if (!timeElement) return;
+            
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            
+            timeElement.textContent = `${hours}:${minutes}`;
+        }
+        
+        setInterval(updateTime, 1000); // 1초마다 업데이트
+        updateTime(); // 페이지 로드 시 즉시 실행
+        
+    </script>
+</html>
