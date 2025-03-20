@@ -122,7 +122,7 @@
                 font-style: normal;
                 font-weight: 900;
                 line-height: normal;
-                letter-spacing: 3.5px; /* 글자 간격을 2px로 설정 */
+                letter-spacing: 3.5px;
                 left:34px;
                 top:15px;
                 z-index: 5000;
@@ -249,6 +249,23 @@
             .bottom-bar-active {
                 animation: slideUp 0.5s ease-in-out forwards;
             }
+
+            #img_name{
+                position: absolute;
+                width: 575px;
+                height: 87px;
+                flex-shrink: 0;
+                color: #FFF;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                font-family: "SBAggroB";
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 200;
+                line-height: normal;
+                left:520px;
+                top:30px;
+                z-index: 5000;
+            }
             
         </style>
     </head>
@@ -260,9 +277,10 @@
                 <div id="background_window">
                     <div id="background_img_NY"></div>
                     <div id="time"></div>
+                    <div id="img_name">출처</div>
 
                     <div id="navi">
-                        <div id="text">1213</div>
+                        <div id="text">1 2 1 3</div>
                         <div id="main_img"></div>
                     </div>
 
@@ -306,6 +324,16 @@
     
         window.addEventListener('resize', adjustScale);
         adjustScale();
+
+
+        const imgName = document.getElementById("img_name");
+        
+        document.getElementById("img_name").addEventListener("click", function() {
+            window.location.href = "img_name.html";
+        });
+        
+    
+
     
         /*time*/
         function updateTime() {

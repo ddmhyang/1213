@@ -5,10 +5,14 @@
             @font-face {
                 font-family: 'SBAggroB';
                 src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
             }
             @font-face {
                 font-family: 'S-CoreDream-3Light';
                 src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
            }
 
             html, body {
@@ -53,7 +57,7 @@
                 box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.49);
             }
 
-            #background_window{
+            #background_window {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -66,7 +70,25 @@
                 z-index: 2000;
                 transition: opacity 1s ease-in-out;
                 opacity: 1;
+                overflow-y: scroll; /* 세로 스크롤 */
+                overflow-x: hidden; /* 수평 스크롤 숨기기 */
+                -webkit-overflow-scrolling: touch;
             }
+            
+            /* 스크롤바를 숨기기 */
+            #background_window::-webkit-scrollbar {
+                width: 0px; /* 세로 스크롤바 너비를 0으로 설정 */
+                height: 0px; /* 가로 스크롤바 높이를 0으로 설정 */
+            }
+            
+            #background_window::-webkit-scrollbar-track {
+                background: transparent; /* 스크롤바 배경을 투명하게 설정 */
+            }
+            
+            #background_window::-webkit-scrollbar-thumb {
+                background: transparent; /* 스크롤바를 투명하게 설정 */
+            }
+            
 
             #background_img_NY {
                 position: absolute;
@@ -140,112 +162,32 @@
                 z-index: 5000;
             }
 
-            #text{
-                top:206.89px;
+            .gallery-container {
+                position: absolute;
+                top: 100px;
                 left: 50%;
                 transform: translateX(-50%);
-                position: absolute;
-                width: 368px;
-                color: #FFF;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 100px;
+            }
+            
+            .gallery {
+                position: relative;
                 text-align: center;
-                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+            
+            .gallery img {
+                width: 300px;
+                margin-bottom: 10px;
+            }
+
+            .text {
                 font-family: "SBAggroB";
-                font-size: 64px;
+                font-size: 30px;
                 font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-                z-index: 3000;
-            }
-
-            #main_img{
-                top:320.89px;
-                left: 50%;
-                transform: translateX(-50%);
-                position: absolute;
-                background: url("img/icon_NY.png") lightgray -578px 0px / 327.381% 100% no-repeat;
-                box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.25);
-                width: 504px;
-                height: 550px;
-                flex-shrink: 0;
-            }
-
-            #app_bar{
-                top:961px;
-                left: 50%;
-                transform: translateX(-50%);
-                position: absolute;
-                width: 560px;
-                height: 166.33px;
-                flex-shrink: 0;
-                border-radius: 60px;
-                background: rgba(255, 255, 255, 0.29);
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                z-index: 3000;
-            }
-
-            #app1{
-                position: absolute;
-                z-index: 4000;
-                width: 96px;
-                height: 96px;
-                top:993.75px;
-                left:69.33px;
-                flex-shrink: 0;
-                border-radius: 30px;
-                background: url("img/menu_NY1.jpg") lightgray 50% / cover no-repeat;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            }
-
-            #app2{
-                position: absolute;
-                z-index: 4000;
-                width: 96px;
-                height: 96px;
-                flex-shrink: 0;
-                top:993.75px;
-                left:202.33px;
-                border-radius: 30px;
-                background: url("img/menu_NY2.jpg") lightgray 50% / cover no-repeat;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            }
-
-            #app3{
-                position: absolute;
-                z-index: 4000;
-                width: 96px;
-                height: 96px;
-                flex-shrink: 0;
-                top:993.75px;
-                left:335.33px;
-                border-radius: 30px;
-                background: url("img/menu_NY3.jpg") lightgray 50% / cover no-repeat;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            }
-
-            #app4{
-                position: absolute;
-                z-index: 4000;
-                width: 96px;
-                height: 96px;
-                flex-shrink: 0;
-                top:993.75px;
-                left:468.33px;
-                border-radius: 30px;
-                background: url("img/menu_NY4.png") lightgray 50% / cover no-repeat;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            }
-            
-            @keyframes slideUp {
-                from {
-                    transform: translate(-50%, 0);
-                }
-                to {
-                    transform: translate(-50%, -200%);
-                }
-            }
-            
-            .bottom-bar-active {
-                animation: slideUp 0.5s ease-in-out forwards;
+                font-weight: 900;
             }
 
             #img_name{
@@ -260,7 +202,7 @@
                 font-style: normal;
                 font-weight: 200;
                 line-height: normal;
-                left:520px;
+                left:500px;
                 top:30px;
                 z-index: 5000;
             }
@@ -275,20 +217,114 @@
                 <div id="background_window">
                     <div id="background_img_NY"></div>
                     <div id="time"></div>
-                    <div id="img_name">출처</div>
+                    <div id="img_name">돌아가기</div>
 
-                    <div id="navi">
-                        <div id="text">NaYeon</div>
-                        <div id="main_img"></div>
-                    </div>
 
-                    <div id="app">
-                        <div id="app_bar"></div>
-                        <div id="app1"></div>
-                        <div id="app2"></div>
-                        <div id="app3"></div>
-                        <div id="app4"></div>
+
+                    <div class="gallery-container">
+                        <div class="gallery">
+                            <img src="img/icon_1213.png"> 
+                            <div class="text">애기</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/icon_NY.png"> 
+                            <div class="text">애기</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/icon_TD.png"> 
+                            <div class="text">애기</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/icon_XM.png"> 
+                            <div class="text">애기</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/index_1213.png"> 
+                            <div class="text">쿠모몽</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/index_NY.jpg"> 
+                            <div class="text">챠고</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/index_TD.jpg"> 
+                            <div class="text">@555uuu</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/index_XM.png"> 
+                            <div class="text">감자감자</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/menu_12131.png"> 
+                            <div class="text">@cha_ra_rang</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/menu_12132.png"> 
+                            <div class="text">@cha_ra_rang</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/menu_12133.jpg"> 
+                            <div class="text">@kam_chch</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/menu_NY1.jpg"> 
+                            <div class="text">또도곰</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/menu_NY2.jpg"> 
+                            <div class="text">또도곰</div>
+                        </div>
+                    
+                        <div class="gallery">
+                            <img src="img/menu_NY3.jpg"> 
+                            <div class="text">은젠</div>
+                        </div> 
+                    
+                        <div class="gallery">
+                            <img src="img/menu_TD1.png"> 
+                            <div class="text">@kam_chch</div>
+                        </div>    
+                    
+                        <div class="gallery">
+                            <img src="img/menu_TD2.png"> 
+                            <div class="text">감자감자</div>
+                        </div>    
+                    
+                        <div class="gallery">
+                            <img src="img/menu_TD3.jpg"> 
+                            <div class="text">@555uuu</div>
+                        </div>      
+                    
+                        <div class="gallery">
+                            <img src="img/menu_XM1.png"> 
+                            <div class="text">전게</div>
+                        </div>     
+                    
+                        <div class="gallery">
+                            <img src="img/menu_XM2.jpg"> 
+                            <div class="text">앤오</div>
+                        </div>     
+                    
+                        <div class="gallery">
+                            <img src="img/menu_XM3.png"> 
+                            <div class="text">마라</div>
+                        </div>                
                     </div>
+                    
+
+
                 </div>
 
                 <div id="top_bar">
@@ -296,9 +332,9 @@
                 </div>
                 <div id="bottom_bar"></div>
             </div>
-            <iframe id = "song" width="0" height="0" src="https://www.youtube.com/embed/kC8ZBSogb6c?autoplay=1&mute=0&controls=0&loop=1&playlist=kC8ZBSogb6c&si=egl8XqrKB_5iBCrL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+        </div>
 
-        </body>
+    </body>
 
     <script>
         /*window*/
@@ -326,9 +362,11 @@
         const imgName = document.getElementById("img_name");
         
         document.getElementById("img_name").addEventListener("click", function() {
-            window.location.href = "img_name.html";
+            window.location.href = "amoeba.html";
         });
         
+    
+
     
         /*time*/
         function updateTime() {
@@ -345,36 +383,7 @@
         setInterval(updateTime, 1000); // 1초마다 업데이트
         updateTime(); // 페이지 로드 시 즉시 실행
 
-
-        // 애플리케이션 아이콘 목록
-        const appIcons = ["app1", "app2", "app3", "app4"];
-
-        // 각 아이콘에 이벤트 추가
-        appIcons.forEach((id) => {
-            let app = document.getElementById(id);
-            
-            // 마우스를 올리면 확대
-            app.addEventListener("mouseenter", () => {
-                app.style.transition = "transform 0.2s ease-in-out";
-                app.style.transform = "scale(1.1)";
-            });
-
-            // 마우스를 내리면 원래 크기로 복귀
-            app.addEventListener("mouseleave", () => {
-                app.style.transform = "scale(1)";
-            });
-        });
-
-        document.getElementById("app1").addEventListener("click", function() {
-            window.location.href = "Nada_main.html";
-        });
         
-        // YouTube API 로드
-        let tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        document.body.appendChild(tag);
-        
-
         const bottomBar = document.getElementById("bottom_bar");
         let startY = 0;
         let isDragging = false;
