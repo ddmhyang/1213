@@ -113,17 +113,17 @@
                 width: 192px;
                 height: 29px;
                 flex-shrink: 0;
-                color: #FFF;
-                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                font-family: "S-CoreDream-3Light";
+                color: #ffffff;
+                font-family: "S-CoreDream-1Light";
                 font-size: 30px;
                 font-style: normal;
                 font-weight: 900;
                 line-height: normal;
                 letter-spacing: 3.5px; /* 글자 간격을 2px로 설정 */
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 left:34px;
                 top:15px;
-                z-index: 5000;
+                z-index: 15000;
             }
 
             #bottom_bar{
@@ -194,6 +194,7 @@
                 border-radius: 30px;
                 background: url("img/menu_NY1.jpg") lightgray 50% / cover no-repeat;
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                cursor: pointer;
             }
 
             #app2{
@@ -207,6 +208,7 @@
                 border-radius: 30px;
                 background: url("img/menu_NY2.jpg") lightgray 50% / cover no-repeat;
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                cursor: pointer;
             }
 
             #app3{
@@ -220,6 +222,7 @@
                 border-radius: 30px;
                 background: url("img/menu_NY3.jpg") lightgray 50% / cover no-repeat;
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                cursor: pointer;
             }
 
             #app4{
@@ -233,6 +236,7 @@
                 border-radius: 30px;
                 background: url("img/menu_NY4.png") lightgray 50% / cover no-repeat;
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                cursor: pointer;
             }
             
             @keyframes slideUp {
@@ -250,19 +254,356 @@
 
             #img_name{
                 position: absolute;
-                width: 575px;
-                height: 87px;
+                width: 40px;
+                padding-left: 20px;
+                padding-right: 20px;
+                height: 40px;
                 flex-shrink: 0;
-                color: #FFF;
+                background-color: rgba(0, 255, 255, 0);
+                color: #ffffff;
                 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                font-family: "S-CoreDream-1Light";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                left:508px;
+                top:20px;
+                z-index: 15000;
+                cursor: pointer;
+            }
+
+            
+
+            #Nada_main{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 634.667px;
+                height: 1228.77px;
+                flex-shrink: 0;
+                border-radius: 40px;
+                background: #fff;
+                z-index: 10000;
+                transition: opacity 1s ease-in-out;
+                opacity: 1;
+                display: none;
+            }
+
+
+            #icon{
+                position: absolute;
+                z-index: 4000;
+                background-color: #FFF;
+                width: 634.667px;
+                height: 115px;
+                flex-shrink: 0;
+                border-radius: 40px;
+            }
+
+            #icon_back{
+                position: absolute;
+                top: 73.89px;
+                left:27.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+                cursor: pointer;
+            }
+
+
+            #icon_streaming{
+                position: absolute;
+                top: 73.89px;
+                left: 474.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+
+
+            #icon_search{
+                position: absolute;
+                top: 73.89px;
+                left:530.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+
+
+            #icon_menu{
+                position: absolute;
+                top: 73.89px;
+                left: 568.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+
+            #shadow_btn{
+                position: absolute;
+                top:460.89px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 634px;
+                height: 70px;
+                flex-shrink: 0;
+                background: #FFF;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                z-index: 4000;
+            }
+
+            #home_btn{
+                position: absolute;
+                width: 27.982px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                left:85.33px;
+                top:483.89px;
+                z-index: 5000;
+                cursor: pointer;
+            }
+
+            #profile_btn{
+                position: absolute;
+                width: 82.826px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                left:273.37px;
+                top:483.89px;
+                z-index: 5000;
+                cursor: pointer;
+            }
+
+            #gallery_btn{
+                position: absolute;
+                width: 85.064px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                left:488.27px;
+                top:483.89px;
+                z-index: 5000;
+                cursor: pointer;
+            }
+
+            #bar_btn{
+                width: 116px;
+                height: 7px;
+                flex-shrink: 0;
+                border-radius: 40px;
+                background: #000;
+                top:523.89px;
+                left:41.3px;
+                position: absolute;
+            }
+
+            #Home_window{
+                z-index: 4000;
+                display: block;
+            }
+
+            #main_img2{
+                position: absolute;
+                top:574.89px;
+                left:50%;
+                transform: translateX(-50%);
+                width: 552px;
+                height: 381px;
+                flex-shrink: 0;
+                background: url("img/nada_main1.jpg") lightgray 0px -64.849px / 100% 193.176% no-repeat;
+            }
+
+            #profile_img{
+                position: absolute;
+                top:339.89px;
+                left:30.33px;
+                width: 96px;
+                height: 96px;
+                border-radius: 100px;
+                border: 6px solid #FFF;
+                background: url("img/nada_main2.jpg") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            #header_img{
+                position: absolute;
+                top:130.89px;
+                left:50%;
+                transform: translateX(-50%);
+                width: 574px;
+                height: 167px;
+                flex-shrink: 0;
+                border-radius: 20px;
+                background: url("img/icon_NY.png") lightgray 0px -6.167px / 100% 114.571% no-repeat;
+            }
+
+            #name{
+                position: absolute;
+                top:360.89px;
+                left:159.33px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            #name_id{
+                position: absolute;
+                top:416.89px;
+                left:169.33px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            #content{
+                border-radius: 40px;
+                position: absolute;
+                width: 634.667px;
+                height: 1228.77px;
+                position: relative;
+                overflow-y: scroll; /* 세로 스크롤 */
+                overflow-x: hidden; /* 수평 스크롤 숨기기 */
+                -webkit-overflow-scrolling: touch;
+                z-index: 3000;
+            }
+            
+            /* 스크롤바를 숨기기 */
+            #content::-webkit-scrollbar {
+                width: 0px; /* 세로 스크롤바 너비를 0으로 설정 */
+                height: 0px; /* 가로 스크롤바 높이를 0으로 설정 */
+            }
+            
+            #content::-webkit-scrollbar-track {
+                background: transparent; /* 스크롤바 배경을 투명하게 설정 */
+            }
+            
+            #content::-webkit-scrollbar-thumb {
+                background: transparent; /* 스크롤바를 투명하게 설정 */
+            }
+
+            #profile_main_img{
+                position: absolute;
+                width: 630px;
+                top:532.89px;
+                left: 50%;
+                transform: translateX(-50%);  
+            }
+
+            #profile_window{
+                display: none;
+            }
+
+            #gallery_window{
+                display: none;
+            }
+
+            .gallery-container {
+                background-color: rgb(255, 255, 255);
+                width: 600px;
+                position: absolute;
+                top: 600px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-wrap: wrap; /* 사진들이 넘칠 때 자동으로 줄바꿈 */
+                justify-content: center; /* 가로로 가운데 정렬 */
+                gap: 40px; /* 사진들 간의 간격 */
+                z-index: 6000;
+            }
+            
+            .gallery { 
+                position: relative;
+                text-align: center;
+                width: 150px; /* 한 줄에 3개씩 배치되도록 각 사진의 너비를 30%로 설정 */
+                height: 150px;
+                margin-bottom: 20px; /* 사진 아래에 여백 추가 */
+                overflow: hidden;
+            }
+
+            .text {
                 font-family: "SBAggroB";
                 font-size: 30px;
                 font-style: normal;
-                font-weight: 200;
-                line-height: normal;
-                left:520px;
-                top:30px;
-                z-index: 5000;
+                font-weight: 900;
+            }
+
+            .gallery-thumbnail {
+                image-rendering: -webkit-optimize-contrast; 
+                transform: translateZ(0);
+                backface-visibility: hidden;
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                cursor: pointer;
+                overflow: hidden;
+                top: 50%;
+                left: 50%;
+                transform: translate(-20%, -20%);
+            }
+
+            /* 팝업 내용 */
+            #popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.841);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+                border-radius: 40px;
+            }
+
+            /* 팝업 내 콘텐츠 스타일 */
+            #popup-content {
+                text-align: center;
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            /* 큰 이미지 스타일 */
+            #popup-image {
+                width: 500px;
+                height: auto;
+                object-fit: contain;
+            }
+
+
+            .gallery_white{
+                height: 100px;
             }
             
         </style>
@@ -289,6 +630,204 @@
                         <div id="app3"></div>
                         <div id="app4"></div>
                     </div>
+
+                    <div id="Nada_main">
+                        <div id="header">
+                            <div id="icon">
+                                <img id = "icon_back" src="img/icon_back.png">
+                                <img id = "icon_streaming" src="img/icon_streaming.png">
+                                <img id = "icon_search" src="img/icon_search.png">
+                                <img id = "icon_menu" src="img/icon_menu.png">
+                            </div>
+
+                            <div id="popup" style="display: none;">
+                                <div id="popup-content">
+                                    <img id="popup-image" src="" alt="큰 이미지">
+                                    <div id="popup-text"></div>
+                                </div>
+                            </div>
+    
+    
+                            <div id ="content">
+                                <div id="button">
+                                    <div id="shadow_btn"></div>
+                                    <div id="home_btn">홈</div>
+                                    <div id="profile_btn">프로필</div>
+                                    <div id="gallery_btn">갤러리</div>
+                                    <div id="bar_btn"></div>
+                                </div>
+                                <div id="header_window">
+                                    <div id="profile_img"></div>
+                                    <div id="name">가나다</div>
+                                    <div id="name_id">@GaNaDa0317</div>
+                                    <div id="header_img"></div>
+    
+                                </div>
+    
+                                <div id="Home_window">
+                                    <div id="main_img2"></div>
+                                </div>
+    
+    
+                                <div id="profile_window">
+                                    <img id="profile_main_img" src="img/nada_profile1.jpg">
+                                </div>
+    
+                                <div id="gallery_window">
+                                    <div class="gallery-container">
+                                        <div class="gallery">
+                                            <img src="img/nada/38.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">채름</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/37.png" class="gallery-thumbnail"> 
+                                            <div class="text">용구수한커피</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/36.png" class="gallery-thumbnail"> 
+                                            <div class="text">kam_chch</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/35.png" class="gallery-thumbnail"> 
+                                            <div class="text">ddong_1027</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/34.png" class="gallery-thumbnail"> 
+                                            <div class="text">ddong_1027</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/33.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">555uuu</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/32.png" class="gallery-thumbnail"> 
+                                            <div class="text">kam_chch</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/31.png" class="gallery-thumbnail"> 
+                                            <div class="text">kam_chch</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/30.png" class="gallery-thumbnail"> 
+                                            <div class="text">kam_chch</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/29.png" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/28.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/27.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/26.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/25.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/24.png" class="gallery-thumbnail"> 
+                                            <div class="text">chap05</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/23.png" class="gallery-thumbnail"> 
+                                            <div class="text">chap05</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/22.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">Nokxeon</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/21.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/20.png" class="gallery-thumbnail"> 
+                                            <div class="text">rhwa444</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/18.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/17.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/16.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/15.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/14.png" class="gallery-thumbnail"> 
+                                            <div class="text">또잠</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/13.png" class="gallery-thumbnail"> 
+                                            <div class="text">또잠</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/12.png" class="gallery-thumbnail"> 
+                                            <div class="text">sixsixsix</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/11.png" class="gallery-thumbnail"> 
+                                            <div class="text">weepingacrobat</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/10.png" class="gallery-thumbnail"> 
+                                            <div class="text">PPA_na</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/9.png" class="gallery-thumbnail"> 
+                                            <div class="text">weepingacrobat</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/8.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">챠고</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/7.png" class="gallery-thumbnail"> 
+                                            <div class="text">weepingacrobat</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/6.png" class="gallery-thumbnail"> 
+                                            <div class="text">weepingacrobat</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/5.png" class="gallery-thumbnail"> 
+                                            <div class="text">weepingacrobat</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/4.png" class="gallery-thumbnail"> 
+                                            <div class="text">weepingacrobat</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/3.png" class="gallery-thumbnail"> 
+                                            <div class="text">Gacha7</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/2.png" class="gallery-thumbnail"> 
+                                            <div class="text">UNBIRTHDAY</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/1.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">채름</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="top_bar">
@@ -296,7 +835,10 @@
                 </div>
                 <div id="bottom_bar"></div>
             </div>
-            <iframe id = "song" width="0" height="0" src="https://www.youtube.com/embed/kC8ZBSogb6c?autoplay=1&mute=0&controls=0&loop=1&playlist=kC8ZBSogb6c&si=egl8XqrKB_5iBCrL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+            <iframe id = "song" width="0" height="0" src="https://www.youtube.com/embed/9DO79KC_qoE?autoplay=1&mute=0&controls=0&loop=1&playlist=9DO79KC_qoE&si=e9doU8UA05FEPW97" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+
+            <!--
+            <iframe id = "song" width="0" height="0" src="https://www.youtube.com/embed/kC8ZBSogb6c?autoplay=1&mute=0&controls=0&loop=1&playlist=kC8ZBSogb6c&si=egl8XqrKB_5iBCrL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  -->  
 
         </body>
 
@@ -365,8 +907,26 @@
             });
         });
 
+        const BackIcon = document.getElementById("icon_back");
+        const NadaMain = document.getElementById("Nada_main");
+        const Time = document.getElementById("time");
+        const ImgName = document.getElementById("img_name")
         document.getElementById("app1").addEventListener("click", function() {
-            window.location.href = "Nada_main.html";
+            NadaMain.style.display = "inline-block";
+            Time.style.color = "#000";
+            ImgName.style.color = "#000";
+        });
+
+        BackIcon.addEventListener("click", function() {
+            
+            document.getElementById('Home_window').style.display = 'block';
+            document.getElementById("bar_btn").style.left = "41px";
+            
+            document.getElementById('profile_window').style.display = 'none';
+            document.getElementById('gallery_window').style.display = 'none';
+            NadaMain.style.display = "none";
+            Time.style.color = "#fff";
+            ImgName.style.color = "#fff";
         });
         
         // YouTube API 로드
@@ -420,9 +980,65 @@
 
             // 애니메이션이 끝난 후 페이지 이동
             setTimeout(() => {
-                window.location.href = "amoeba.html";
+                window.location.href = "index.html";
             }, 350); // 애니메이션 지속 시간과 맞춰야 함
         }
+
+
+
+        document.getElementById('home_btn').addEventListener('click', function() {
+            document.getElementById('Home_window').style.display = 'block';
+            document.getElementById("bar_btn").style.left = "41px";
+            
+            document.getElementById('profile_window').style.display = 'none';
+            document.getElementById('gallery_window').style.display = 'none';
+        });
+
+        document.getElementById('profile_btn').addEventListener('click', function() {
+            document.getElementById('profile_window').style.display = 'block';
+            document.getElementById("bar_btn").style.left = "256px";
+            document.getElementById('Home_window').style.display = 'none';
+            document.getElementById('gallery_window').style.display = 'none';
+        });
+
+        document.getElementById('gallery_btn').addEventListener('click', function() {
+            document.getElementById('gallery_window').style.display = 'block';
+            document.getElementById("bar_btn").style.left = "472px";
+            document.getElementById('Home_window').style.display = 'none';
+            document.getElementById('profile_window').style.display = 'none';
+        });
+
+
+
+
+        // 썸네일 이미지 클릭 시 원본 이미지와 텍스트 표시
+        function showPopup(imageSrc, text) {
+            const popup = document.getElementById('popup');
+            const popupImage = document.getElementById('popup-image');
+            const popupText = document.getElementById('popup-text');
+            
+            popupImage.src = imageSrc;
+            popupText.innerHTML = text;
+            popup.style.display = 'flex';
+        }
+
+        // 팝업 클릭 시 닫기
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        }
+
+        // 모든 썸네일 이미지에 클릭 이벤트 추가
+        document.querySelectorAll('.gallery-thumbnail').forEach(img => {
+            img.addEventListener('click', function() {
+                const imageSrc = this.src; // 클릭된 이미지의 src
+                const text = this.nextElementSibling.textContent; // 해당 텍스트
+                showPopup(imageSrc, text); // 팝업에 원본 이미지와 텍스트 표시
+            });
+        });
+
+        // 팝업 배경 클릭 시 닫기
+        document.getElementById('popup').addEventListener('click', closePopup);
     </script>
 
 </html>
