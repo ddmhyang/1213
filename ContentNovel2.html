@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.1">
+
         <script>
             (function(d) {
               var config = {
@@ -12,10 +14,12 @@
               h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
             })(document);
         </script>
+
         <style>
             html, body {
                 margin: 0;
                 padding: 0;
+                width: 100%;
                 height: 100%;
                 background-color: #000000;
                 overflow: hidden;
@@ -27,9 +31,8 @@
             .container {
                 width: 430px;
                 height: 932px;
-                transform-origin: center center;
                 background-color: #000000;
-                position: relative;
+                position: absolute;
                 transition: width 0.2s, height 0.2s;
                 overflow: hidden;
         }
@@ -192,7 +195,7 @@
                 background: transparent; /* 스크롤바를 투명하게 설정 */
             }
 
-            .content a{
+            #content a{
                 text-align: left;
                 font-family: "source-han-serif-japanese", serif;
                 font-weight: 700;
@@ -238,7 +241,6 @@
                 letter-spacing: -0.18px;
                 color: #B0B0B0;
                 padding: 20px 0px;
-                cursor: pointer;
             }
 
             #text_down{
@@ -254,10 +256,9 @@
                 letter-spacing: -0.18px;
                 color: #B0B0B0;
                 padding: 20px 0px;
-                cursor: pointer;
             }
 
-            
+
         </style>
     </head>
 
@@ -304,7 +305,7 @@
                         <br><br>
                         대통령은 제4항과 제5항의 규정에 의하여 확정된 법률을 지체없이 공포하여야 한다. 제5항에 의하여 법률이 확정된 후 또는 제4항에 의한 확정법률이 정부에 이송된 후 5일 이내에 대통령이 공포하지 아니할 때에는 국회의장이 이를 공포한다. 모든 국민은 주거의 자유를 침해받지 아니한다. 주거에 대한 압수나 수색을 할 때에는 검사의 신청에 의하여 법관이 발부한 영장을 제시하여야 한다. 형사피의자 또는 형사피고인으로서 구금되었던 자가 법률이 정하는 불기소처분을 받거나 무죄판결을 받은 때에는 법률이 정하는 바에 의하여 국가에 정당한 보상을 청구할 수 있다. 사면·감형 및 복권에 관한 사항은 법률로 정한다.
                     </a>
-                </div>
+                    </div>
     
                 <div id = "collab"><a href="https://x.com/neko09040810">SUNGHO TAESAN FIRST COLLABORATION</a></div>
             </div>
@@ -340,8 +341,42 @@
         window.addEventListener('resize', adjustScale);
         adjustScale();
 
-
         const content = document.getElementById("content_text");
+        let startY = 0;
+        let currentY = 0;
+        let isDragging = false;
+
+        function updateMaxScroll() {
+            return content.offsetHeight - content.scrollHeight;
+        }
+
+        // 터치 시작
+        document.addEventListener("touchstart", (e) => {
+            startY = e.touches[0].clientY - currentY;
+            isDragging = true;
+        });
+
+        // 터치 이동
+        document.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            currentY = e.touches[0].clientY - startY;
+            currentY = Math.max(Math.min(0, currentY), updateMaxScroll()); // 동적 최대 스크롤 설정
+            content.style.transform = `translateY(${currentY}px)`;
+        });
+
+        // 터치 종료
+        document.addEventListener("touchend", () => {
+            isDragging = false;
+        });
+
+        // 마우스 휠 스크롤
+        document.addEventListener("wheel", (e) => {
+            currentY -= e.deltaY;
+            currentY = Math.max(Math.min(0, currentY), updateMaxScroll()); // 동적 최대 스크롤 설정
+            content.style.transform = `translateY(${currentY}px)`;
+        });
+
+
         const textUp = document.getElementById("text_up");
         const textDown = document.getElementById("text_down");
 
