@@ -357,6 +357,7 @@
         textUp.addEventListener("click", () => {
             fontSize += 2;
             content.style.fontSize = fontSize + "px";
+            content.style.lineHeight = fontSize + fontSize + "px";
         });
 
         textDown.addEventListener("click", () => {
