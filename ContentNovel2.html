@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.1">
         <script>
             (function(d) {
               var config = {
@@ -257,7 +256,12 @@
                 padding: 20px 0px;
                 cursor: pointer;
             }
-
+            @media screen and (max-width: 768px) {
+                body {
+                  transform: scale(1.1);
+                  transform-origin: top left;
+                }
+              }
             
         </style>
     </head>
