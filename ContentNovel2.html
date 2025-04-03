@@ -363,6 +363,7 @@
         textDown.addEventListener("click", () => {
             fontSize = Math.max(6, fontSize - 2); // 최소 크기 제한 (10px)
             content.style.fontSize = fontSize + "px";
+            content.style.lineHeight = fontSize + fontSize + "px";
         });
 
 
