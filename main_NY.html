@@ -2,6 +2,7 @@
 <html>
     <head>
         <style>
+            /*기본*/
             @font-face {
                 font-family: 'SBAggroB';
                 src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
@@ -36,7 +37,9 @@
                 transition: background-color 1s ease-in-out;
             }
         
-            
+
+
+            /*맨아래 틀*/            
             #index_box {
                 position: absolute;
                 top: 50%;
@@ -53,6 +56,7 @@
                 box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.49);
             }
 
+            /*핸드폰 화면*/
             #background_window{
                 position: absolute;
                 top: 50%;
@@ -68,22 +72,7 @@
                 opacity: 1;
             }
 
-            #background_img_NY {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 634.667px;
-                height: 1228.77px;
-                flex-shrink: 0;
-                border-radius: 40px;
-                z-index: 2000;
-                transition: opacity 1s ease-in-out; /* 부드러운 변화 */
-                opacity: 0; /* 기본적으로 숨김 */
-                border-radius: 40px;
-                background: linear-gradient(0deg, rgba(219, 227, 254, 0.50) 0%, rgba(219, 227, 254, 0.50) 100%), url("img/icon_NY.png") lightgray 50% / cover no-repeat;
-            }
-
+            /*위 바*/
             #top_bar{
                 position: absolute;
                 top: 13.09px;
@@ -97,6 +86,7 @@
                 z-index: 2500;
             }
 
+            /*카메라*/
             #top_camera{
                 position: absolute;
                 top: 15px;
@@ -108,6 +98,7 @@
                 z-index: 2500;
             }
 
+            /*시간*/
             #time{
                 position: absolute;
                 width: 192px;
@@ -126,6 +117,7 @@
                 z-index: 15000;
             }
 
+            /*아래 바바*/
             #bottom_bar{
                 position: absolute;
                 top:1194.89px;
@@ -140,6 +132,7 @@
                 z-index: 5000;
             }
 
+            /*나연 글자*/
             #text{
                 top:206.89px;
                 left: 50%;
@@ -157,6 +150,7 @@
                 z-index: 3000;
             }
 
+            /*바탕화면 메인 이미지(작은 거)*/
             #main_img{
                 top:320.89px;
                 left: 50%;
@@ -169,6 +163,7 @@
                 flex-shrink: 0;
             }
 
+            /*앱 들고 있는 바*/
             #app_bar{
                 top:961px;
                 left: 50%;
@@ -182,7 +177,21 @@
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
                 z-index: 3000;
             }
-
+            
+            @keyframes slideUp {
+                from {
+                    transform: translate(-50%, 0);
+                }
+                to {
+                    transform: translate(-50%, -200%);
+                }
+            }
+            
+            .bottom-bar-active {
+                animation: slideUp 0.5s ease-in-out forwards;
+            }
+            
+            /*앱1, 2, 3, 4*/
             #app1{
                 position: absolute;
                 z-index: 4000;
@@ -238,20 +247,9 @@
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
                 cursor: pointer;
             }
-            
-            @keyframes slideUp {
-                from {
-                    transform: translate(-50%, 0);
-                }
-                to {
-                    transform: translate(-50%, -200%);
-                }
-            }
-            
-            .bottom-bar-active {
-                animation: slideUp 0.5s ease-in-out forwards;
-            }
 
+
+            /*출처*/
             #img_name{
                 position: absolute;
                 width: 40px;
@@ -275,7 +273,16 @@
 
             
 
-            #Nada_main{
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/           
+
+            /*나다 시작*/
+            #nada_main{
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -292,6 +299,7 @@
             }
 
 
+            /*아이콘들*/
             #icon{
                 position: absolute;
                 z-index: 4000;
@@ -302,6 +310,7 @@
                 border-radius: 40px;
             }
 
+            /*뒤로가기기*/
             #icon_back{
                 position: absolute;
                 top: 73.89px;
@@ -314,6 +323,7 @@
             }
 
 
+            /*방송근데뭐없음음*/
             #icon_streaming{
                 position: absolute;
                 top: 73.89px;
@@ -325,6 +335,7 @@
             }
 
 
+            /*검색근데뭐없음음*/
             #icon_search{
                 position: absolute;
                 top: 73.89px;
@@ -336,16 +347,20 @@
             }
 
 
+            /*메뉴근데뭐없음음*/
             #icon_menu{
                 position: absolute;
                 top: 73.89px;
-                left: 568.33px;
+                left: 586.33px;
                 width: 30px;
                 height: 30px;
                 flex-shrink: 0;
                 aspect-ratio: 1/1;
             }
 
+
+
+            /*홈프로필갤러리바 그림자*/
             #shadow_btn{
                 position: absolute;
                 top:460.89px;
@@ -407,6 +422,7 @@
                 cursor: pointer;
             }
 
+            /*어딘지 알려주는 선택 바바*/
             #bar_btn{
                 width: 116px;
                 height: 7px;
@@ -416,74 +432,13 @@
                 top:523.89px;
                 left:41.3px;
                 position: absolute;
+                z-index: 5000;
             }
 
-            #Home_window{
-                z-index: 4000;
-                display: block;
-            }
 
-            #main_img2{
-                position: absolute;
-                top:574.89px;
-                left:50%;
-                transform: translateX(-50%);
-                width: 552px;
-                height: 381px;
-                flex-shrink: 0;
-                background: url("img/nada_main1.jpg") lightgray 0px -64.849px / 100% 193.176% no-repeat;
-            }
 
-            #profile_img{
-                position: absolute;
-                top:339.89px;
-                left:30.33px;
-                width: 96px;
-                height: 96px;
-                border-radius: 100px;
-                border: 6px solid #FFF;
-                background: url("img/nada_main2.jpg") lightgray 50% / cover no-repeat;
-                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            }
 
-            #header_img{
-                position: absolute;
-                top:130.89px;
-                left:50%;
-                transform: translateX(-50%);
-                width: 574px;
-                height: 167px;
-                flex-shrink: 0;
-                border-radius: 20px;
-                background: url("img/icon_NY.png") lightgray 0px -6.167px / 100% 114.571% no-repeat;
-            }
-
-            #name{
-                position: absolute;
-                top:360.89px;
-                left:159.33px;
-                color: #000;
-                text-align: center;
-                font-family: "SB Aggro";
-                font-size: 36px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-            }
-
-            #name_id{
-                position: absolute;
-                top:416.89px;
-                left:169.33px;
-                color: #000;
-                text-align: center;
-                font-family: "SB Aggro";
-                font-size: 15px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-            }
-
+            /*content시작*/
             #content{
                 border-radius: 40px;
                 position: absolute;
@@ -510,6 +465,83 @@
                 background: transparent; /* 스크롤바를 투명하게 설정 */
             }
 
+            /*헤더*/
+            #header_img{
+                position: absolute;
+                top:130.89px;
+                left:50%;
+                transform: translateX(-50%);
+                width: 574px;
+                height: 167px;
+                flex-shrink: 0;
+                border-radius: 20px;
+                background: url("img/icon_NY.png") lightgray 0px -6.167px / 100% 114.571% no-repeat;
+            }
+
+            /*인장*/
+            #profile_img{
+                position: absolute;
+                top:339.89px;
+                left:30.33px;
+                width: 96px;
+                height: 96px;
+                border-radius: 100px;
+                border: 6px solid #FFF;
+                background: url("img/nada_main2.jpg") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            /*이름*/
+            #name{
+                position: absolute;
+                top:360.89px;
+                left:159.33px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            /*아이디*/
+            #name_id{
+                position: absolute;
+                top:416.89px;
+                left:169.33px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+
+            /*홈 시작*/
+            #Home_window{
+                z-index: 4000;
+                display: block;
+            }
+
+            #main_img2{
+                position: absolute;
+                top:556.89px;
+                left:50%;
+                transform: translateX(-50%);
+                width: 552px;
+                height: 613px;
+                flex-shrink: 0;
+                background: url("img/nada/39.png") no-repeat;
+            }
+
+            /*프로필 시작*/
+            #profile_window{
+                display: none;
+            }
+
             #profile_main_img{
                 position: absolute;
                 width: 630px;
@@ -518,57 +550,12 @@
                 transform: translateX(-50%);  
             }
 
-            #profile_window{
-                display: none;
-            }
 
+            /*갤러리 시작*/
             #gallery_window{
                 display: none;
             }
-
-            .gallery-container {
-                background-color: rgb(255, 255, 255);
-                width: 600px;
-                position: absolute;
-                top: 600px;
-                left: 50%;
-                transform: translateX(-50%);
-                display: flex;
-                flex-wrap: wrap; /* 사진들이 넘칠 때 자동으로 줄바꿈 */
-                justify-content: center; /* 가로로 가운데 정렬 */
-                gap: 40px; /* 사진들 간의 간격 */
-                z-index: 6000;
-            }
             
-            .gallery { 
-                position: relative;
-                text-align: center;
-                width: 150px; /* 한 줄에 3개씩 배치되도록 각 사진의 너비를 30%로 설정 */
-                height: 150px;
-                margin-bottom: 20px; /* 사진 아래에 여백 추가 */
-                overflow: hidden;
-            }
-
-            .text {
-                font-family: "SBAggroB";
-                font-size: 30px;
-                font-style: normal;
-                font-weight: 900;
-            }
-
-            .gallery-thumbnail {
-                image-rendering: -webkit-optimize-contrast; 
-                transform: translateZ(0);
-                backface-visibility: hidden;
-                width: 300px;
-                height: 300px;
-                object-fit: cover;
-                cursor: pointer;
-                overflow: hidden;
-                top: 50%;
-                left: 50%;
-                transform: translate(-20%, -20%);
-            }
 
             /* 팝업 내용 */
             #popup {
@@ -602,10 +589,910 @@
             }
 
 
-            .gallery_white{
-                height: 100px;
+            /*공통*/
+            /*갤러리들의 모임*/
+            .gallery-container {
+                background-color: rgb(255, 255, 255);
+                width: 600px;
+                position: absolute;
+                top: 590px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-wrap: wrap; /* 사진들이 넘칠 때 자동으로 줄바꿈 */
+                justify-content: center; /* 가로로 가운데 정렬 */
+                gap: 40px; /* 사진들 간의 간격 */
+                z-index: 6000;
             }
             
+            /*각각의 갤러리들 class*/
+            .gallery { 
+                position: relative;
+                text-align: center;
+                width: 150px; /* 한 줄에 3개씩 배치되도록 각 사진의 너비를 30%로 설정 */
+                height: 150px;
+                margin-bottom: 20px; /* 사진 아래에 여백 추가 */
+                box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.25);
+                overflow: hidden;
+                border-radius: 30px;
+                transition: transform 0.2s ease-in-out;
+            }
+
+            .gallery:hover{
+                transform: scale(1.1);
+            }
+
+            
+            /*각 이미지들의 출처*/
+            .text {
+                font-family: "SBAggroB";
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 900;
+            }
+
+            /*갤러리 썸네일*/
+            .gallery-thumbnail {
+                image-rendering: -webkit-optimize-contrast; 
+                transform: translateZ(0);
+                backface-visibility: hidden;
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                cursor: pointer;
+                overflow: hidden;
+                top: 50%;
+                left: 50%;
+                transform: translate(-20%, -20%);
+            }
+
+            /*아래 공백*/
+            .gallery_white{
+                width: 600px;
+                height: 100px;
+            }
+
+
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /*연화 시작*/
+            #yeon_main{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 634.667px;
+                height: 1228.77px;
+                flex-shrink: 0;
+                border-radius: 40px;
+                background: #fff;
+                z-index: 10000;
+                transition: opacity 1s ease-in-out;
+                opacity: 1;
+                display: none;
+            }
+
+
+            /*아이콘들*/
+            #two-icon{
+                position: absolute;
+                z-index: 4000;
+                background-color: #FFF;
+                width: 634.667px;
+                height: 115px;
+                flex-shrink: 0;
+                border-radius: 40px;
+            }
+
+            /*뒤로가기기*/
+            #two-icon_back{
+                position: absolute;
+                top: 73.89px;
+                left:27.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+                cursor: pointer;
+            }
+
+
+            /*방송근데뭐없음음*/
+            #two-icon_streaming{
+                position: absolute;
+                top: 73.89px;
+                left: 474.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+
+
+            /*검색근데뭐없음음*/
+            #two-icon_search{
+                position: absolute;
+                top: 73.89px;
+                left:530.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+
+
+            /*메뉴근데뭐없음음*/
+            #two-icon_menu{
+                position: absolute;
+                top: 73.89px;
+                left: 586.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+
+
+
+            /*홈프로필갤러리바 그림자*/
+            #two-shadow_btn{
+                position: absolute;
+                top:460.89px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 634px;
+                height: 70px;
+                flex-shrink: 0;
+                background: #FFF;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                z-index: 4000;
+            }
+
+            #two-home_btn{
+                position: absolute;
+                width: 27.982px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                left:85.33px;
+                top:483.89px;
+                z-index: 5000;
+                cursor: pointer;
+            }
+
+            #two-profile_btn{
+                position: absolute;
+                width: 82.826px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                left:273.37px;
+                top:483.89px;
+                z-index: 5000;
+                cursor: pointer;
+            }
+
+            #two-gallery_btn{
+                position: absolute;
+                width: 85.064px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                left:488.27px;
+                top:483.89px;
+                z-index: 5000;
+                cursor: pointer;
+            }
+
+            /*어딘지 알려주는 선택 바바*/
+            #two-bar_btn{
+                width: 116px;
+                height: 7px;
+                flex-shrink: 0;
+                border-radius: 40px;
+                background: #000;
+                top:523.89px;
+                left:41.3px;
+                position: absolute;
+                z-index: 5000;
+            }
+
+
+
+
+            /*content시작*/
+            #two-content{
+                border-radius: 40px;
+                position: absolute;
+                width: 634.667px;
+                height: 1228.77px;
+                position: relative;
+                overflow-y: scroll; /* 세로 스크롤 */
+                overflow-x: hidden; /* 수평 스크롤 숨기기 */
+                -webkit-overflow-scrolling: touch;
+                z-index: 3000;
+            }
+            
+            /* 스크롤바를 숨기기 */
+            #two-content::-webkit-scrollbar {
+                width: 0px; /* 세로 스크롤바 너비를 0으로 설정 */
+                height: 0px; /* 가로 스크롤바 높이를 0으로 설정 */
+            }
+            
+            #two-content::-webkit-scrollbar-track {
+                background: transparent; /* 스크롤바 배경을 투명하게 설정 */
+            }
+            
+            #two-content::-webkit-scrollbar-thumb {
+                background: transparent; /* 스크롤바를 투명하게 설정 */
+            }
+
+            /*헤더*/
+            #two-header_img{
+                position: absolute;
+                top:130.89px;
+                left:50%;
+                transform: translateX(-50%);
+                width: 574px;
+                height: 167px;
+                flex-shrink: 0;
+                border-radius: 20px;
+                background: url("img/icon_NY.png") lightgray 0px -6.167px / 100% 114.571% no-repeat;
+            }
+
+            /*인장*/
+            #two-profile_img{
+                position: absolute;
+                top:339.89px;
+                left:30.33px;
+                width: 96px;
+                height: 96px;
+                border-radius: 100px;
+                border: 6px solid #FFF;
+                background: url("img/yeon_profile.png") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            /*이름*/
+            #two-name{
+                position: absolute;
+                top:360.89px;
+                left:159.33px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            /*아이디*/
+            #two-name_id{
+                position: absolute;
+                top:416.89px;
+                left:169.33px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+
+            /*홈 시작*/
+            #two-Home_window{
+                z-index: 4000;
+                display: block;
+            }
+
+            #two-main_img2{
+                position: absolute;
+                top:556.89px;
+                left:50%;
+                transform: translateX(-50%);
+                width: 552px;
+                height: 613px;
+                flex-shrink: 0;
+                background: url("img/nada/39.png") no-repeat;
+            }
+
+            /*프로필 시작*/
+            #two-profile_window{
+                display: none;
+            }
+
+            #two-profile_main_img{
+                position: absolute;
+                width: 630px;
+                top:532.89px;
+                left: 50%;
+                transform: translateX(-50%);  
+            }
+
+
+            /*갤러리 시작*/
+            #two-gallery_window{
+                display: none;
+            }
+            
+
+            /* 팝업 내용 */
+            #two-popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.841);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+                border-radius: 40px;
+            }
+
+            /* 팝업 내 콘텐츠 스타일 */
+            #two-popup-content {
+                text-align: center;
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            /* 큰 이미지 스타일 */
+            #two-popup-image {
+                width: 500px;
+                height: auto;
+                object-fit: contain;
+            }
+
+            /*공통*/
+            /*갤러리들의 모임*/
+            .two-gallery-container {
+                background-color: rgb(255, 255, 255);
+                width: 600px;
+                position: absolute;
+                top: 590px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-wrap: wrap; /* 사진들이 넘칠 때 자동으로 줄바꿈 */
+                justify-content: center; /* 가로로 가운데 정렬 */
+                gap: 40px; /* 사진들 간의 간격 */
+                z-index: 6000;
+            }
+            
+            /*각각의 갤러리들 class*/
+            .two-gallery { 
+                position: relative;
+                text-align: center;
+                width: 150px; /* 한 줄에 3개씩 배치되도록 각 사진의 너비를 30%로 설정 */
+                height: 150px;
+                margin-bottom: 20px; /* 사진 아래에 여백 추가 */
+                box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.25);
+                overflow: hidden;
+                border-radius: 30px;
+                transition: transform 0.2s ease-in-out;
+            }
+
+            .two-gallery:hover{
+                transform: scale(1.1);
+            }
+
+            
+            /*각 이미지들의 출처*/
+            .two-text {
+                font-family: "SBAggroB";
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 900;
+            }
+
+            /*갤러리 썸네일*/
+            .two-gallery-thumbnail {
+                image-rendering: -webkit-optimize-contrast; 
+                transform: translateZ(0);
+                backface-visibility: hidden;
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                cursor: pointer;
+                overflow: hidden;
+                top: 50%;
+                left: 50%;
+                transform: translate(-20%, -20%);
+            }
+
+            /*아래 공백*/
+            .two-gallery_white{
+                width: 600px;
+                height: 100px;
+            }
+
+
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /*나연 시작*/
+            #nayeon_main{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 634.667px;
+                height: 1228.77px;
+                flex-shrink: 0;
+                border-radius: 40px;
+                background: #fff;
+                z-index: 10000;
+                transition: opacity 1s ease-in-out;
+                opacity: 1;
+                display: none;
+            }
+            
+            
+            /*아이콘들*/
+            #three-icon{
+                position: absolute;
+                z-index: 4000;
+                background-color: #FFF;
+                width: 634.667px;
+                height: 115px;
+                flex-shrink: 0;
+                border-radius: 40px;
+            }
+            
+            /*뒤로가기기*/
+            #three-icon_back{
+                position: absolute;
+                top: 73.89px;
+                left:27.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+                cursor: pointer;
+            }
+            
+            
+            /*방송근데뭐없음음*/
+            #three-icon_streaming{
+                position: absolute;
+                top: 73.89px;
+                left: 474.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+            
+            
+            /*검색근데뭐없음음*/
+            #three-icon_search{
+                position: absolute;
+                top: 73.89px;
+                left:530.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+            
+            
+            /*메뉴근데뭐없음음*/
+            #three-icon_menu{
+                position: absolute;
+                top: 73.89px;
+                left: 586.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+            }
+            
+            
+            
+            /*홈프로필갤러리바 그림자*/
+            #three-shadow_btn{
+                position: absolute;
+                top:460.89px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 634px;
+                height: 70px;
+                flex-shrink: 0;
+                background: #FFF;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                z-index: 4000;
+            }
+            
+            #three-home_btn{
+                position: absolute;
+                width: 27.982px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                left:85.33px;
+                top:483.89px;
+                z-index: 5000;
+                cursor: pointer;
+            }
+            
+            #three-profile_btn{
+                position: absolute;
+                width: 82.826px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                left:273.37px;
+                top:483.89px;
+                z-index: 5000;
+                cursor: pointer;
+            }
+            
+            #three-gallery_btn{
+                position: absolute;
+                width: 85.064px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                left:488.27px;
+                top:483.89px;
+                z-index: 5000;
+                cursor: pointer;
+            }
+            
+            /*어딘지 알려주는 선택 바바*/
+            #three-bar_btn{
+                width: 116px;
+                height: 7px;
+                flex-shrink: 0;
+                border-radius: 40px;
+                background: #000;
+                top:523.89px;
+                left:41.3px;
+                position: absolute;
+                z-index: 5000;
+            }
+            
+            
+            
+            
+            /*content시작*/
+            #three-content{
+                border-radius: 40px;
+                position: absolute;
+                width: 634.667px;
+                height: 1228.77px;
+                position: relative;
+                overflow-y: scroll; /* 세로 스크롤 */
+                overflow-x: hidden; /* 수평 스크롤 숨기기 */
+                -webkit-overflow-scrolling: touch;
+                z-index: 3000;
+            }
+            
+            /* 스크롤바를 숨기기 */
+            #three-content::-webkit-scrollbar {
+                width: 0px; /* 세로 스크롤바 너비를 0으로 설정 */
+                height: 0px; /* 가로 스크롤바 높이를 0으로 설정 */
+            }
+            
+            #three-content::-webkit-scrollbar-track {
+                background: transparent; /* 스크롤바 배경을 투명하게 설정 */
+            }
+            
+            #three-content::-webkit-scrollbar-thumb {
+                background: transparent; /* 스크롤바를 투명하게 설정 */
+            }
+            
+            /*헤더*/
+            #three-header_img{
+                position: absolute;
+                top:130.89px;
+                left:50%;
+                transform: translateX(-50%);
+                width: 574px;
+                height: 167px;
+                flex-shrink: 0;
+                border-radius: 20px;
+                background: url("img/icon_NY.png") lightgray 0px -6.167px / 100% 114.571% no-repeat;
+            }
+            
+            /*인장*/
+            #three-profile_img{
+                position: absolute;
+                top:339.89px;
+                left:30.33px;
+                width: 96px;
+                height: 96px;
+                border-radius: 100px;
+                border: 6px solid #FFF;
+                background: url("img/yeon_profile.png") lightgray 50% / cover no-repeat;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+            
+            /*이름*/
+            #three-name{
+                position: absolute;
+                top:360.89px;
+                left:159.33px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            
+            /*아이디*/
+            #three-name_id{
+                position: absolute;
+                top:416.89px;
+                left:169.33px;
+                color: #000;
+                text-align: center;
+                font-family: "SB Aggro";
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            
+            
+            /*홈 시작*/
+            #three-Home_window{
+                z-index: 4000;
+                display: block;
+            }
+            
+            #three-main_img2{
+                position: absolute;
+                top:556.89px;
+                left:50%;
+                transform: translateX(-50%);
+                width: 552px;
+                height: 613px;
+                flex-shrink: 0;
+                background: url("img/nada/39.png") no-repeat;
+            }
+            
+            /*프로필 시작*/
+            #three-profile_window{
+                display: none;
+            }
+            
+            #three-profile_main_img{
+                position: absolute;
+                width: 630px;
+                top:532.89px;
+                left: 50%;
+                transform: translateX(-50%);  
+            }
+            
+            
+            /*갤러리 시작*/
+            #three-gallery_window{
+                display: none;
+            }
+            
+            
+            /* 팝업 내용 */
+            #three-popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.841);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+                border-radius: 40px;
+            }
+            
+            /* 팝업 내 콘텐츠 스타일 */
+            #three-popup-content {
+                text-align: center;
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            
+            /* 큰 이미지 스타일 */
+            #three-popup-image {
+                width: 500px;
+                height: auto;
+                object-fit: contain;
+            }
+            
+            /*공통*/
+            /*갤러리들의 모임*/
+            .three-gallery-container {
+                background-color: rgb(255, 255, 255);
+                width: 600px;
+                position: absolute;
+                top: 590px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-wrap: wrap; /* 사진들이 넘칠 때 자동으로 줄바꿈 */
+                justify-content: center; /* 가로로 가운데 정렬 */
+                gap: 40px; /* 사진들 간의 간격 */
+                z-index: 6000;
+            }
+            
+            /*각각의 갤러리들 class*/
+            .three-gallery { 
+                position: relative;
+                text-align: center;
+                width: 150px; /* 한 줄에 3개씩 배치되도록 각 사진의 너비를 30%로 설정 */
+                height: 150px;
+                margin-bottom: 20px; /* 사진 아래에 여백 추가 */
+                box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.25);
+                overflow: hidden;
+                border-radius: 30px;
+                transition: transform 0.2s ease-in-out;
+            }
+            
+            .three-gallery:hover{
+                transform: scale(1.1);
+            }
+            
+            
+            /*각 이미지들의 출처*/
+            .three-text {
+                font-family: "SBAggroB";
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 900;
+            }
+            
+            /*갤러리 썸네일*/
+            .three-gallery-thumbnail {
+                image-rendering: -webkit-optimize-contrast; 
+                transform: translateZ(0);
+                backface-visibility: hidden;
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                cursor: pointer;
+                overflow: hidden;
+                top: 50%;
+                left: 50%;
+                transform: translate(-20%, -20%);
+            }
+            
+            /*아래 공백*/
+            .three-gallery_white{
+                width: 600px;
+                height: 100px;
+            }
+
+
+
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /**/
+            /*나연 채팅 시작*/
+            #nayeon_chat{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 634.667px;
+                height: 1228.77px;
+                flex-shrink: 0;
+                border-radius: 40px;
+                background: #fff;
+                z-index: 10000;
+                transition: opacity 1s ease-in-out;
+                opacity: 1;
+                display: none;
+            }
+            
+            
+            /*아이콘들*/
+            #four-icon{
+                position: absolute;
+                z-index: 4000;
+                background-color: #FFF;
+                width: 634.667px;
+                height: 115px;
+                flex-shrink: 0;
+                border-radius: 40px;
+            }
+            
+            /*뒤로가기기*/
+            #four-icon_back{
+                position: absolute;
+                top: 73.89px;
+                left:27.33px;
+                width: 30px;
+                height: 30px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+                cursor: pointer;
+            }
+            
+            /*content시작*/
+            #four-content{
+                border-radius: 40px;
+                position: absolute;
+                width: 634.667px;
+                height: 1228.77px;
+                position: relative;
+                overflow-y: scroll; /* 세로 스크롤 */
+                overflow-x: hidden; /* 수평 스크롤 숨기기 */
+                -webkit-overflow-scrolling: touch;
+                z-index: 3000;
+            }
+            
+            /* 스크롤바를 숨기기 */
+            #four-content::-webkit-scrollbar {
+                width: 0px; /* 세로 스크롤바 너비를 0으로 설정 */
+                height: 0px; /* 가로 스크롤바 높이를 0으로 설정 */
+            }
+            
+            #four-content::-webkit-scrollbar-track {
+                background: transparent; /* 스크롤바 배경을 투명하게 설정 */
+            }
+            
+            #four-content::-webkit-scrollbar-thumb {
+                background: transparent; /* 스크롤바를 투명하게 설정 */
+            }
         </style>
     </head>
 
@@ -614,7 +1501,6 @@
 
             <div id="index_box">
                 <div id="background_window">
-                    <div id="background_img_NY"></div>
                     <div id="time"></div>
                     <div id="img_name">출처</div>
 
@@ -631,7 +1517,7 @@
                         <div id="app4"></div>
                     </div>
 
-                    <div id="Nada_main">
+                    <div id="nada_main">
                         <div id="header">
                             <div id="icon">
                                 <img id = "icon_back" src="img/icon_back.png">
@@ -650,11 +1536,11 @@
     
                             <div id ="content">
                                 <div id="button">
-                                    <div id="shadow_btn"></div>
+                                    <div id="bar_btn"></div>
                                     <div id="home_btn">홈</div>
                                     <div id="profile_btn">프로필</div>
                                     <div id="gallery_btn">갤러리</div>
-                                    <div id="bar_btn"></div>
+                                    <div id="shadow_btn"></div>
                                 </div>
                                 <div id="header_window">
                                     <div id="profile_img"></div>
@@ -674,6 +1560,7 @@
                                 </div>
     
                                 <div id="gallery_window">
+
                                     <div class="gallery-container">
                                         <div class="gallery">
                                             <img src="img/nada/38.jpg" class="gallery-thumbnail"> 
@@ -696,28 +1583,8 @@
                                             <div class="text">ddong_1027</div>
                                         </div>
                                         <div class="gallery">
-                                            <img src="img/nada/33.jpg" class="gallery-thumbnail"> 
-                                            <div class="text">555uuu</div>
-                                        </div>
-                                        <div class="gallery">
                                             <img src="img/nada/32.png" class="gallery-thumbnail"> 
                                             <div class="text">kam_chch</div>
-                                        </div>
-                                        <div class="gallery">
-                                            <img src="img/nada/31.png" class="gallery-thumbnail"> 
-                                            <div class="text">kam_chch</div>
-                                        </div>
-                                        <div class="gallery">
-                                            <img src="img/nada/30.png" class="gallery-thumbnail"> 
-                                            <div class="text">kam_chch</div>
-                                        </div>
-                                        <div class="gallery">
-                                            <img src="img/nada/29.png" class="gallery-thumbnail"> 
-                                            <div class="text">현실도 피자</div>
-                                        </div>
-                                        <div class="gallery">
-                                            <img src="img/nada/28.jpg" class="gallery-thumbnail"> 
-                                            <div class="text">현실도 피자</div>
                                         </div>
                                         <div class="gallery">
                                             <img src="img/nada/27.jpg" class="gallery-thumbnail"> 
@@ -742,10 +1609,6 @@
                                         <div class="gallery">
                                             <img src="img/nada/22.jpg" class="gallery-thumbnail"> 
                                             <div class="text">Nokxeon</div>
-                                        </div>
-                                        <div class="gallery">
-                                            <img src="img/nada/21.jpg" class="gallery-thumbnail"> 
-                                            <div class="text">현실도 피자</div>
                                         </div>
                                         <div class="gallery">
                                             <img src="img/nada/20.png" class="gallery-thumbnail"> 
@@ -823,8 +1686,159 @@
                                             <img src="img/nada/1.jpg" class="gallery-thumbnail"> 
                                             <div class="text">채름</div>
                                         </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/33.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">555uuu</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/31.png" class="gallery-thumbnail"> 
+                                            <div class="text">kam_chch</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/30.png" class="gallery-thumbnail"> 
+                                            <div class="text">kam_chch</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/29.png" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/28.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery">
+                                            <img src="img/nada/21.jpg" class="gallery-thumbnail"> 
+                                            <div class="text">현실도 피자</div>
+                                        </div>
+                                        <div class="gallery_white"></div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="yeon_main">
+                        <div id="two-header">
+                            <div id="two-icon">
+                                <img id = "two-icon_back" src="img/icon_back.png">
+                                <img id = "two-icon_streaming" src="img/icon_streaming.png">
+                                <img id = "two-icon_search" src="img/icon_search.png">
+                                <img id = "two-icon_menu" src="img/icon_menu.png">
+                            </div>
+
+                            <div id="two-popup" style="display: none;">
+                                <div id="two-popup-content">
+                                    <img id="two-popup-image" src="" alt="큰 이미지">
+                                    <div id="two-popup-text"></div>
+                                </div>
+                            </div>
+    
+    
+                            <div id ="two-content">
+                                <div id="two-button">
+                                    <div id="two-bar_btn"></div>
+                                    <div id="two-home_btn">홈</div>
+                                    <div id="two-profile_btn">프로필</div>
+                                    <div id="two-gallery_btn">갤러리</div>
+                                    <div id="two-shadow_btn"></div>
+                                </div>
+                                <div id="two-header_window">
+                                    <div id="two-profile_img"></div>
+                                    <div id="two-name">김연화</div>
+                                    <div id="two-name_id">@YeonHwa1213</div>
+                                    <div id="two-header_img"></div>
+    
+                                </div>
+    
+                                <div id="two-Home_window">
+                                    <div id="two-main_img2"></div>
+                                </div>
+    
+    
+                                <div id="two-profile_window">
+                                    <img id="two-profile_main_img" src="img/nada_profile1.jpg">
+                                </div>
+    
+                                <div id="two-gallery_window">
+
+                                    <div class="two-gallery-container">
+                                        <div class="two-gallery">
+                                            <img src="img/nada/38.jpg" class="two-gallery-thumbnail"> 
+                                            <div class="two-text">채름</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="nayeon_main">
+                        <div id="three-header">
+                            <div id="three-icon">
+                                <img id = "three-icon_back" src="img/icon_back.png">
+                                <img id = "three-icon_streaming" src="img/icon_streaming.png">
+                                <img id = "three-icon_search" src="img/icon_search.png">
+                                <img id = "three-icon_menu" src="img/icon_menu.png">
+                            </div>
+
+                            <div id="three-popup" style="display: none;">
+                                <div id="three-popup-content">
+                                    <img id="three-popup-image" src="" alt="큰 이미지">
+                                    <div id="three-popup-text"></div>
+                                </div>
+                            </div>
+    
+    
+                            <div id ="three-content">
+                                <div id="three-button">
+                                    <div id="three-bar_btn"></div>
+                                    <div id="three-home_btn">홈</div>
+                                    <div id="three-profile_btn">프로필</div>
+                                    <div id="three-gallery_btn">갤러리</div>
+                                    <div id="three-shadow_btn"></div>
+                                </div>
+                                <div id="three-header_window">
+                                    <div id="three-profile_img"></div>
+                                    <div id="three-name">나다연화</div>
+                                    <div id="three-name_id">@NaYeon0217</div>
+                                    <div id="three-header_img"></div>
+    
+                                </div>
+    
+                                <div id="three-Home_window">
+                                    <div id="three-main_img2"></div>
+                                </div>
+    
+    
+                                <div id="three-profile_window">
+                                    <img id="three-profile_main_img" src="img/nada_profile1.jpg">
+                                </div>
+    
+                                <div id="three-gallery_window">
+
+                                    <div class="three-gallery-container">
+                                        <div class="three-gallery">
+                                            <img src="img/nada/38.jpg" class="three-gallery-thumbnail"> 
+                                            <div class="three-text">채름</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div id="nayeon_chat">
+                        <div id="four-header">
+                            <div id="four-icon">
+                                <img id = "four-icon_back" src="img/icon_back.png">
+                            </div>
+
+    
+    
+                            <div id ="four-content">
                             </div>
                         </div>
                     </div>
@@ -844,7 +1858,8 @@
         </body>
 
     <script>
-        /*window*/
+///////////////////////////////////////////////////////////////////
+        /*화면 비율*/
         function adjustScale() {
             let container = document.querySelector('.container');
             let width = window.innerWidth;
@@ -873,7 +1888,9 @@
         });
         
     
-        /*time*/
+///////////////////////////////////////////////////////////////////
+
+        /*시계*/
         function updateTime() {
             const timeElement = document.querySelector('#time');
             if (!timeElement) return;
@@ -885,11 +1902,14 @@
             timeElement.textContent = `${hours}:${minutes}`;
         }
     
-        setInterval(updateTime, 1000); // 1초마다 업데이트
-        updateTime(); // 페이지 로드 시 즉시 실행
+        setInterval(updateTime, 1000);
+        updateTime();
 
 
-        // 애플리케이션 아이콘 목록
+///////////////////////////////////////////////////////////////////
+
+
+        // 애플리케이션
         const appIcons = ["app1", "app2", "app3", "app4"];
 
         // 각 아이콘에 이벤트 추가
@@ -908,27 +1928,9 @@
             });
         });
 
-        const BackIcon = document.getElementById("icon_back");
-        const NadaMain = document.getElementById("Nada_main");
-        const Time = document.getElementById("time");
-        const ImgName = document.getElementById("img_name")
-        document.getElementById("app1").addEventListener("click", function() {
-            NadaMain.style.display = "inline-block";
-            Time.style.color = "#000";
-            ImgName.style.color = "#000";
-        });
 
-        BackIcon.addEventListener("click", function() {
-            
-            document.getElementById('Home_window').style.display = 'block';
-            document.getElementById("bar_btn").style.left = "41px";
-            
-            document.getElementById('profile_window').style.display = 'none';
-            document.getElementById('gallery_window').style.display = 'none';
-            NadaMain.style.display = "none";
-            Time.style.color = "#fff";
-            ImgName.style.color = "#fff";
-        });
+///////////////////////////////////////////////////////////////////
+
         
         // YouTube API 로드
         let tag = document.createElement('script');
@@ -936,6 +1938,10 @@
         document.body.appendChild(tag);
         
 
+///////////////////////////////////////////////////////////////////
+
+
+        /*하단 홈 바*/
         const bottomBar = document.getElementById("bottom_bar");
         let startY = 0;
         let isDragging = false;
@@ -986,11 +1992,108 @@
         }
 
 
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
-        document.getElementById('home_btn').addEventListener('click', function() {
+
+        /*뒤로가기 + 앱 키는 기능들*/
+
+        const Time = document.getElementById("time");
+        /*app1*/
+        const BackIcon = document.getElementById("icon_back");
+        const NadaMain = document.getElementById("nada_main");
+        const ImgName = document.getElementById("img_name")
+        document.getElementById("app1").addEventListener("click", function() {
+            NadaMain.style.display = "inline-block";
+            Time.style.color = "#000";
+            ImgName.style.color = "#000";
+        });
+
+        BackIcon.addEventListener("click", function() {
+            
             document.getElementById('Home_window').style.display = 'block';
             document.getElementById("bar_btn").style.left = "41px";
             
+            document.getElementById('profile_window').style.display = 'none';
+            document.getElementById('gallery_window').style.display = 'none';
+            NadaMain.style.display = "none";
+            Time.style.color = "#fff";
+            ImgName.style.color = "#fff";
+        });
+
+        /*app2*/
+        const TwoBackIcon = document.getElementById("two-icon_back");
+        const YeonMain = document.getElementById("yeon_main");
+        document.getElementById("app2").addEventListener("click", function() {
+            YeonMain.style.display = "inline-block";
+            Time.style.color = "#000";
+            ImgName.style.color = "#000";
+        });
+
+        TwoBackIcon.addEventListener("click", function() {
+            
+            document.getElementById('two-Home_window').style.display = 'block';
+            document.getElementById("two-bar_btn").style.left = "41px";
+            
+            document.getElementById('two-profile_window').style.display = 'none';
+            document.getElementById('two-gallery_window').style.display = 'none';
+            YeonMain.style.display = "none";
+            Time.style.color = "#fff";
+            ImgName.style.color = "#fff";
+        });
+
+        /*app3*/
+        const ThreeBackIcon = document.getElementById("three-icon_back");
+        const NaYeonMain = document.getElementById("nayeon_main");
+        document.getElementById("app3").addEventListener("click", function() {
+            NaYeonMain.style.display = "inline-block";
+            Time.style.color = "#000";
+            ImgName.style.color = "#000";
+        });
+
+        ThreeBackIcon.addEventListener("click", function() {
+            
+            document.getElementById('three-Home_window').style.display = 'block';
+            document.getElementById("three-bar_btn").style.left = "41px";
+            
+            document.getElementById('three-profile_window').style.display = 'none';
+            document.getElementById('three-gallery_window').style.display = 'none';
+            NaYeonMain.style.display = "none";
+            Time.style.color = "#fff";
+            ImgName.style.color = "#fff";
+        });
+
+        
+
+        /*app4*/
+        const FourBackIcon = document.getElementById("four-icon_back");
+        const NaYeonChat = document.getElementById("nayeon_chat");
+        document.getElementById("app4").addEventListener("click", function() {
+            NaYeonChat.style.display = "inline-block";
+            Time.style.color = "#000";
+            ImgName.style.color = "#000";
+        });
+
+        FourBackIcon.addEventListener("click", function() {
+            
+            document.getElementById('four-Home_window').style.display = 'block';
+            document.getElementById("four-bar_btn").style.left = "41px";
+            
+            document.getElementById('four-profile_window').style.display = 'none';
+            document.getElementById('four-gallery_window').style.display = 'none';
+            NaYeonChat.style.display = "none";
+            Time.style.color = "#fff";
+            ImgName.style.color = "#fff";
+        });
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+/*여기서부터 가나다 시작*/
+
+        /*홈, 프로필, 갤러리 버튼*/
+        document.getElementById('home_btn').addEventListener('click', function() {
+            document.getElementById('Home_window').style.display = 'block';
+            document.getElementById("bar_btn").style.left = "41px";
             document.getElementById('profile_window').style.display = 'none';
             document.getElementById('gallery_window').style.display = 'none';
         });
@@ -1000,6 +2103,7 @@
             document.getElementById("bar_btn").style.left = "256px";
             document.getElementById('Home_window').style.display = 'none';
             document.getElementById('gallery_window').style.display = 'none';
+
         });
 
         document.getElementById('gallery_btn').addEventListener('click', function() {
@@ -1011,7 +2115,8 @@
 
 
 
-
+///////////////////////////////////////////////////////////////////
+        /*갤러리*/
         // 썸네일 이미지 클릭 시 원본 이미지와 텍스트 표시
         function showPopup(imageSrc, text) {
             const popup = document.getElementById('popup');
@@ -1040,6 +2145,129 @@
 
         // 팝업 배경 클릭 시 닫기
         document.getElementById('popup').addEventListener('click', closePopup);
+
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+/*여기서부터 연화화 시작*/
+
+        /*홈, 프로필, 갤러리 버튼*/
+        document.getElementById('two-home_btn').addEventListener('click', function() {
+            document.getElementById('two-Home_window').style.display = 'block';
+            document.getElementById("two-bar_btn").style.left = "41px";
+            document.getElementById('two-profile_window').style.display = 'none';
+            document.getElementById('two-gallery_window').style.display = 'none';
+        });
+
+        document.getElementById('two-profile_btn').addEventListener('click', function() {
+            document.getElementById('two-profile_window').style.display = 'block';
+            document.getElementById("two-bar_btn").style.left = "256px";
+            document.getElementById('two-Home_window').style.display = 'none';
+            document.getElementById('two-gallery_window').style.display = 'none';
+
+        });
+
+        document.getElementById('two-gallery_btn').addEventListener('click', function() {
+            document.getElementById('two-gallery_window').style.display = 'block';
+            document.getElementById("two-bar_btn").style.left = "472px";
+            document.getElementById('two-Home_window').style.display = 'none';
+            document.getElementById('two-profile_window').style.display = 'none';
+        });
+
+
+
+///////////////////////////////////////////////////////////////////
+        /*갤러리*/
+        // 썸네일 이미지 클릭 시 원본 이미지와 텍스트 표시
+        function showPopup2(imageSrc, text) {
+            const TwoPopup = document.getElementById('two-popup');
+            const TwoPopupImage = document.getElementById('two-popup-image');
+            const TwoPopupText = document.getElementById('two-popup-text');
+            
+            TwoPopupImage.src = imageSrc;
+            TwoPopupText.innerHTML = text;
+            TwoPopup.style.display = 'flex';
+        }
+
+        // 팝업 클릭 시 닫기
+        function closePopup2() {
+            const TwoPopup = document.getElementById('two-popup');
+            TwoPopup.style.display = 'none';
+        }
+
+        // 모든 썸네일 이미지에 클릭 이벤트 추가
+        document.querySelectorAll('.two-gallery-thumbnail').forEach(img => {
+            img.addEventListener('two-click', function() {
+                const imageSrc = this.src; // 클릭된 이미지의 src
+                const text = this.nextElementSibling.textContent; // 해당 텍스트
+                showPopup2(imageSrc, text); // 팝업에 원본 이미지와 텍스트 표시
+            });
+        });
+
+        // 팝업 배경 클릭 시 닫기
+        document.getElementById('two-popup').addEventListener('click', closePopup2);
+
+
+        
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+/*여기서부터 나연 시작*/
+
+        /*홈, 프로필, 갤러리 버튼*/
+        document.getElementById('three-home_btn').addEventListener('click', function() {
+            document.getElementById('three-Home_window').style.display = 'block';
+            document.getElementById("three-bar_btn").style.left = "41px";
+            document.getElementById('three-profile_window').style.display = 'none';
+            document.getElementById('three-gallery_window').style.display = 'none';
+        });
+
+        document.getElementById('three-profile_btn').addEventListener('click', function() {
+            document.getElementById('three-profile_window').style.display = 'block';
+            document.getElementById("three-bar_btn").style.left = "256px";
+            document.getElementById('three-Home_window').style.display = 'none';
+            document.getElementById('three-gallery_window').style.display = 'none';
+
+        });
+
+        document.getElementById('three-gallery_btn').addEventListener('click', function() {
+            document.getElementById('three-gallery_window').style.display = 'block';
+            document.getElementById("three-bar_btn").style.left = "472px";
+            document.getElementById('three-Home_window').style.display = 'none';
+            document.getElementById('three-profile_window').style.display = 'none';
+        });
+
+
+
+///////////////////////////////////////////////////////////////////
+        /*갤러리*/
+        // 썸네일 이미지 클릭 시 원본 이미지와 텍스트 표시
+        function showPopup3(imageSrc, text) {
+            const ThreePopup = document.getElementById('three-popup');
+            const ThreePopupImage = document.getElementById('three-popup-image');
+            const ThreePopupText = document.getElementById('three-popup-text');
+            
+            ThreePopupImage.src = imageSrc;
+            ThreePopupText.innerHTML = text;
+            ThreePopup.style.display = 'flex';
+        }
+
+        // 팝업 클릭 시 닫기
+        function closePopup3() {
+            const ThreePopup = document.getElementById('three-popup');
+            ThreePopup.style.display = 'none';
+        }
+
+        // 모든 썸네일 이미지에 클릭 이벤트 추가
+        document.querySelectorAll('.three-gallery-thumbnail').forEach(img => {
+            img.addEventListener('three-click', function() {
+                const imageSrc = this.src; // 클릭된 이미지의 src
+                const text = this.nextElementSibling.textContent; // 해당 텍스트
+                showPopup3(imageSrc, text); // 팝업에 원본 이미지와 텍스트 표시
+            });
+        });
+
+        // 팝업 배경 클릭 시 닫기
+        document.getElementById('three-popup').addEventListener('click', closePopup3);
     </script>
 
 </html>
